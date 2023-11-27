@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TestDatabase extends Controller
 {
     public function test(){
-            $tes = DB::select('select * from TES');
+            $tes = DB::select('select * from users');
             dd('Connection Success To Oracle Database');
     }
 }
