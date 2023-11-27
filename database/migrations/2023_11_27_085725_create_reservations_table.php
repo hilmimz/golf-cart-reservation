@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->integer('route_start');
             $table->integer('route_end');
@@ -21,10 +21,12 @@ return new class extends Migration
             $table->date('date');
             $table->string('token');
             $table->boolean('status');
+            $table->integer('golf_cart_id');
             $table->foreign('route_start')->references('id')->on('routes')->onDelete('cascade');
             $table->foreign('route_end')->references('id')->on('routes')->onDelete('cascade');
             $table->foreign('passenger_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');
         });
     }
 
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('reservations');
     }
 };
