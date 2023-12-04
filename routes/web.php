@@ -20,11 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [TestDatabase::class, 'test']);
+Route::get('/landing', function () {
+    return view('landing-page');
+});
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/test', [TestDatabase::class, 'test']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
