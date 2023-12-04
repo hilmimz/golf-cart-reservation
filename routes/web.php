@@ -30,7 +30,7 @@ Route::get('/landing', function () {
 Route::get('/test', [TestDatabase::class, 'test']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
-
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');

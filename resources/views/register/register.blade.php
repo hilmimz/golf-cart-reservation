@@ -26,26 +26,31 @@
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5">
                         <div class="text-center mb-5">
                             <!-- <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div> -->
-                            <h1 class="fw-bolder">Halo selamat datang kembali!</h1>
+                            <h1 class="fw-bolder">Halo, selamat datang!</h1>
                             <p class="lead fw-normal text-muted mb-0">Silakan registrasi terlebih dahulu untuk melanjutkan</p>
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form id="contactForm" action="{{ route('register.store') }}" method="POST">
+                                @csrf
+                                    <div class="form-group mb-3">
+                                        <label for="formGroupExampleInput">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                                    </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Email">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Password</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Password">
+                                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password">
                                     </div>
-                                    </form>
                                     <div class="mt-5 text-center">
                                             <p>Sudah memiliki akun? <a href="/login">Login di sini</a></p>
                                         </div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="##">Register</button></div>
+                                    <div class="d-grid"><button class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" type="submit">Register</button></div>
+                                </form>
                             </div>
                         </div>
                     </div>
