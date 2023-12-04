@@ -27,7 +27,7 @@
                         <div class="text-center mb-5">
                             <!-- <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div> -->
                             <h1 class="fw-bolder">Halo selamat datang kembali!</h1>
-                            <p class="lead fw-normal text-muted mb-0">Silakan login terlebih dahulu untuk melanjutkan</p>
+                            <p class="lead fw-normal text-muted mb-0">Silakan registrasi terlebih dahulu untuk melanjutkan</p>
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
