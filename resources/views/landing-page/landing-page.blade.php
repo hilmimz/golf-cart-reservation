@@ -45,8 +45,8 @@
                                 <h1 class="display-3 fw-bolder mb-5 d-inline">Selamat Datang di Golf Cart</h1>
                                 <div class="fs-5 fw-light text-muted mb-4">Lakukan reservasi golf cart, melihat rute dan jadwal golf cart untuk memudahkan dan mempercepat mobilitasmu ketika bebas emisi</div>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="##">Login</a>
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="##">Registrasi</a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ route('login') }}">Login</a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ route('register') }}">Registrasi</a>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                 </div>
             </header>
             <!-- About Section-->
-            <section class="bg-light py-5">
+            <!-- <section class="bg-light py-5">
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-8">
@@ -193,13 +193,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </main>
         <!-- Footer-->
         <footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Golf Cart 2023</div></div>
                     <div class="col-auto">
                         <a class="small" href="#!">Privacy</a>
                         <span class="mx-1">&middot;</span>
