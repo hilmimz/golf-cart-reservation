@@ -42,7 +42,7 @@
                                     </div>
                                     </form>
                                     <div class="mt-5 text-center">
-                                            <p>Belum memiliki akun? <a href="/register">Daftar di sini</a></p>
+                                            <p>Belum memiliki akun? <a href="/register">Login di sini</a></p>
                                         </div>
                                     <!-- Submit Button-->
                                     <div class="d-grid"><button class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="##">Register</button></div>
