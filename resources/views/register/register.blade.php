@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Test | Register</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-
-    <!-- Bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-</head>
-
-
-<body class="bg-gradient-primary">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg" style="margin-top: 100px">
-            <div class="card-body p-4">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content />
+        <meta name="author" content />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Page content-->
+            <section class="py-5">
+                <div class="container px-5">
+                    <!-- Contact form-->
+                    <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                        <div class="text-center mb-5">
+                            <!-- <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div> -->
+                            <h1 class="fw-bolder">Halo selamat datang kembali!</h1>
+                            <p class="lead fw-normal text-muted mb-0">Silakan login terlebih dahulu untuk melanjutkan</p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                    <div class="form-group mb-3">
+                                        <label for="formGroupExampleInput">Email</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Email">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="formGroupExampleInput">Password</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Password">
+                                    </div>
+                                    </form>
+                                    <div class="mt-5 text-center">
+                                            <p>Belum memiliki akun? <a href="/register">Daftar di sini</a></p>
+                                        </div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
                             </div>
-                            <form class="user" action="/register" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="name" id="name" placeholder="Nama" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Email Address" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" required>
-                                </div>
-                                <button class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </button>
-                                <div class="mt-2 text-center">
-                                    <p>Have account? <a href="/login">Login here!</a></p>
-                                </div>
-                            </form>
-                            <hr>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5 justify-content-center">
+                    <div class="col-auto"><div class="text-center small m-0">Copyright &copy; Golf Cart 2023</div></div>
+                </div>
             </div>
-        </div>
-
-    </div>
-
-
-</body>
-
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
