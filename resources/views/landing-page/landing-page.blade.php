@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Personal - Start Bootstrap Theme</title>
+        <title>Golf Cart</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Custom Google font-->
@@ -45,7 +45,7 @@
                                 <h1 class="display-3 fw-bolder mb-5 d-inline">Selamat Datang di Golf Cart</h1>
                                 <div class="fs-5 fw-light text-muted mb-4">Lakukan reservasi golf cart, melihat rute dan jadwal golf cart untuk memudahkan dan mempercepat mobilitasmu ketika bebas emisi</div>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ route('login') }}">Login</a>
+                                    <a class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ route('login') }}">Login</a>
                                     <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ route('register') }}">Registrasi</a>
                                 </div>
                             </div>
