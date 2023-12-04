@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/landing', function () {
-    return view('landing-page');
+    return view('landing-page/landing-page');
 });
 
 Route::get('/test', [TestDatabase::class, 'test']);
