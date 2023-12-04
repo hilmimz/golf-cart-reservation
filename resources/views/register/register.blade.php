@@ -45,7 +45,7 @@
                                             <p>Belum memiliki akun? <a href="/register">Daftar di sini</a></p>
                                         </div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Register</button></div>
                             </div>
                         </div>
                     </div>
