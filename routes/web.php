@@ -23,16 +23,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/landing', function () {
-    return view('landing-page/landing-page');
-});
-
 Route::get('/test', [TestDatabase::class, 'test']);
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
-Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
+    Route::get('/landing', function () {
+        return view('landing-page/landing-page');
+    });
+});
+
+Route::middleware(['user'])->group(function () {
+    Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
+});
+Route::middleware(['driver'])->group(function () {
+    Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
+});
+Route::middleware(['admin'])->group(function () {
+    Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
+});
