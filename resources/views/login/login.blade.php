@@ -29,31 +29,48 @@
                             <h1 class="fw-bolder">Halo selamat datang kembali!</h1>
                             <p class="lead fw-normal text-muted mb-0">Silakan login terlebih dahulu untuk melanjutkan</p>
                         </div>
+                        {{-- Perbaiki displaynya --}}
+                        @if(session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('loginError')}}
+                        </div>
+                        @endif
+                        @if($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="{{ route('login.authenticate') }}" method="post">
+                                    @csrf
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Email">
+                                        <input type="text" class="form-control" id="formGroupExampleInput" name="email" placeholder="Enter Email">
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Password</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Password">
+                                        <input type="text" class="form-control" id="formGroupExampleInput" name="password" placeholder="Enter Password">
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput2">Masuk Sebagai</label>
-                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                        <option value="1">User</option>
-                                        <option value="2">Driver</option>
-                                        <option value="3">Admin</option>
+                                        <select class="form-select" id="floatingSelect" name="type" aria-label="Floating label select example">
+                                        @foreach ($types as $type)
+                                        <option value={{ $type->id }}>{{ $type->name }}</option> 
+                                        @endforeach
                                     </select>
                                     </div>
-                                    </form>
+                                    
                                     <div class="mt-5 text-center">
                                             <p>Belum memiliki akun? <a href="/register">Daftar di sini</a></p>
                                         </div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="##">Login</button></div>
+                                    <div class="d-grid"><button class="btn btn-dark btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" type="submit">Login</button></div>
+                                </form>
                             </div>
                         </div>
                     </div>
