@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->time('time');
             $table->integer('route_start');
-            $table->boolean('direction');
             $table->integer('golf_cart_id');
             $table->foreign('route_start')->references('id')->on('routes')->onDelete('cascade');
             $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');

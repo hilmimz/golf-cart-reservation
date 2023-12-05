@@ -17,17 +17,8 @@ class RoutesModel extends Model
     protected $fillable =[
         'name',
         'order',
+        'time_to_next_stop'
     ];
-
-    public function route_start_reservations(): HasMany
-    {
-        return $this->hasMany(ReservationsModel::class,'route_start','id');
-    }
-
-    public function route_end_reservations(): HasMany
-    {
-        return $this->hasMany(ReservationsModel::class,'route_end','id');
-    }
 
     public function route_start_schedules(): HasMany
     {
