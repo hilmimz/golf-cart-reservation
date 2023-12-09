@@ -23,17 +23,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Perubahan daffa 
+Route::get('/admin/dashboard_admin', function () {
+    return view('admin/dashboard_admin');
+});
+
+
+Route::get('/admin/kelola_rute', function () {
+    return view('admin/kelola_rute');
+});
+
+Route::get('/admin/kelola_jadwal', function () {
+    return view('admin/kelola_jadwal');
+});
+
+Route::get('/admin/kelola_supir', function () {
+    return view('admin/kelola_sopir');
+});
+// Perubahan daffa 
+
 Route::get('/test', [TestDatabase::class, 'test']);
 
-Route::middleware(['guest'])->group(function () {
-    Route::get('/register', [RegisterController::class, 'index'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-    Route::get('/landing', function () {
-        return view('landing-page/landing-page');
-    });
-});
+// Route::middleware(['guest'])->group(function () {
+//     Route::get('/register', [RegisterController::class, 'index'])->name('register');
+//     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+//     Route::get('/login', [LoginController::class, 'index'])->name('login');
+//     Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
+//     Route::get('/landing', function () {
+//         return view('landing-page/landing-page');
+//     });
+// });
 
 Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
@@ -41,6 +60,6 @@ Route::middleware(['user'])->group(function () {
 Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
 });
-Route::middleware(['admin'])->group(function () {
-    Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-});
+// Route::middleware(['admin'])->group(function () {
+//     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
+// });
