@@ -260,7 +260,7 @@
                                             </select>
 
                                             <button type="submit" class="btn btn-primary ml-4">
-                                                <i class="fas fa-search"></i> <!-- Masih nyari icon -->
+                                                <i class="fa fa-search"></i> <!-- Masih nyari icon -->
                                             </button>
                                         </div>
                                     </div>
@@ -276,7 +276,7 @@
                                                 <option value="3">Halte C</option>
                                             </select>
 
-                                            <button type="submit" class="btn btn-primary ml-2">
+                                            <button type="submit" class="btn btn-primary ml-4 mr-2">
                                                 <i class="fas fa-search"></i> 
                                             </button>
                                         </div>

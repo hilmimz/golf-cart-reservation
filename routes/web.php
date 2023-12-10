@@ -33,11 +33,13 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/landing', function () {
         return view('landing-page/landing-page');
     });
+    Route::get('/cek_jadwal', [CekJadwalController::class, 'index'])->name('cek_jadwal');
 });
 
 //Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 //});
+
 Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
 });
