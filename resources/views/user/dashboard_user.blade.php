@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>Golf Cart</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -36,15 +36,14 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <div class="container-fluid">
+                        <div class="navbar-header align-items: left mr-4">
+                        <a class="navbar-brand font-weight-bold" href="#">Golf Cart</a> <!-- gabisa digeser ke kanan -->
+                        </div>
 
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <div class="container-fluid">
-                        <div class="navbar-header">
-                        <a class="navbar-brand font-weight-bold" href="#">Golf Cart</a> <!-- gabisa digeser ke kanan -->
-                        </div>
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -94,72 +93,6 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{('template/img/undraw_profile_1.svg')}}"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{('template/img/undraw_profile_2.svg')}}"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{('template/img/undraw_profile_3.svg')}}"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
 
@@ -260,7 +193,15 @@
                                             </select>
 
                                             <button type="submit" class="btn btn-primary ml-4">
-                                                <i class="fa fa-search"></i> <!-- Masih nyari icon -->
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <rect width="20" height="20" fill="url(#pattern0)"/>
+                                                <defs>
+                                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_621_1210" transform="scale(0.0078125)"/>
+                                                </pattern>
+                                                <image id="image0_621_1210" width="128" height="128" xlink:href="data:image/png;base64,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"/>
+                                                </defs>
+                                                </svg>
                                             </button>
                                         </div>
                                     </div>

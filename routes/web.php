@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DriverDashboardController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CekJadwalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +42,9 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 //});
 
-Route::middleware(['driver'])->group(function () {
+// Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-});
-Route::middleware(['admin'])->group(function () {
+// });
+// Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-});
+// });
