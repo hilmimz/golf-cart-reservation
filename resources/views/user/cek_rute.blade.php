@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- Custom styles for this template-->
     <link href="{{asset('template/css/sb-admin-2.min.css')}}" rel="stylesheet">
@@ -219,24 +220,27 @@
                             <div class="card shadow mb-4">
                                 <div class="card-body">
 
-                            
-
-                                <div class="container-fluid custom-container ">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-3 custom-content">
-                                            <h6>Golf Cart 1</h6>
-                                        </div>
-                                        <div class="col-md-3 custom-content">
-                                            <h6>07:30</h6>
-                                            <p>Halte A</p>
-                                        </div>
-                                        <div class="col-md-3 custom-content">
-                                            <h6>07:40</h6>
-                                            <p>Halte B</p>
-                                        </div>
-                                        <div class="col-md-3 custom-content">
-                                            <button class="btn btn-primary text-right mb-4" type="button">Pesan</button>
-                                        </div>
+                                <div class="container-fluid custom-container">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 custom-content">
+                                    <h5>Golf Cart 1</h5>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:40</h6>
+                                    <p>Halte B</p>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:50</h6>
+                                    <p>Halte C</p>
+                                </div>
+                                <div class="col-md-3 custom-content d-flex justify-content-center">
+                                <button class="btn btn-primary text-right mb-4" type="button">Pesan</button>
+                                </div>
                                     </div>
                                 </div>
 
@@ -260,24 +264,27 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
 
-                        
-
-                            <div class="container-fluid custom-container ">
-                                <div class="row align-items-center">
-                                    <div class="col-md-3 custom-content">
-                                        <h6>Golf Cart 1</h6>
-                                    </div>
-                                    <div class="col-md-3 custom-content">
-                                        <h6>07:40</h6>
-                                        <p>Halte B</p>
-                                    </div>
-                                    <div class="col-md-3 custom-content">
-                                        <h6>07:50</h6>
-                                        <p>Halte C</p>
-                                    </div>
-                                    <div class="col-md-3 custom-content">
-                                        <button class="btn btn-primary text-right mb-4" type="button">Pesan</button>
-                                    </div>
+                            <div class="container-fluid custom-container">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 custom-content">
+                                    <h5>Golf Cart 1</h5>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:40</h6>
+                                    <p>Halte B</p>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:50</h6>
+                                    <p>Halte C</p>
+                                </div>
+                                <div class="col-md-3 custom-content d-flex justify-content-center">
+                                <button class="btn btn-primary text-right mb-4" type="button">Pesan</button>
+                                </div>
                                 </div>
                             </div>
 
