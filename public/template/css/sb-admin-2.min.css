@@ -11517,3 +11517,10 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
+
+.custom-container {
+    margin: 20px; /* Adjust margin as needed */
+}
+.custom-content {
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
