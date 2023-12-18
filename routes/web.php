@@ -21,9 +21,9 @@ use App\Http\Controllers\CekRuteController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/test', [TestDatabase::class, 'test']);
 
@@ -32,7 +32,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-    Route::get('/landing', function () {
+    Route::get('/', function () {
         return view('landing-page/landing-page');
     });
     Route::get('/cek_jadwal', [CekJadwalController::class, 'index'])->name('cek_jadwal');
