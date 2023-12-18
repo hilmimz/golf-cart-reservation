@@ -49,3 +49,7 @@ Route::middleware(['driver'])->group(function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
 });
+
+Route::get('/dashboard_user/profile', function () {
+    return view('user/profile');
+})->name('profile');
