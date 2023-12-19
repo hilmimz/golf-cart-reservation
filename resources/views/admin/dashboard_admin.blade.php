@@ -1,1 +1,2 @@
-<h2>Dashboard Admin</h2>
+@extends('template.template')
+@section('content')

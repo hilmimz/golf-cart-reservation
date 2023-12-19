@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('order');
+            $table->integer('time_to_next_stop');
         });
     }
 

@@ -37,12 +37,12 @@ class ReservationsModel extends Model
 
     public function route_start(): BelongsTo
     {
-        return $this->belongsTo(RoutesModel::class,'route_start','id');
+        return $this->belongsTo(SchedulesModel::class,'route_start','id');
     }
 
     public function route_end(): BelongsTo
     {
-        return $this->belongsTo(RoutesModel::class,'route_end','id');
+        return $this->belongsTo(SchedulesModel::class,'route_end','id');
     }
 
     public function golf_cart(): BelongsTo

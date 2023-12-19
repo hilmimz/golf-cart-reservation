@@ -27,6 +27,7 @@ use App\Http\Controllers\CekRuteController;
 
 Route::get('/test', [TestDatabase::class, 'test']);
 
+// GUEST
 Route::middleware(['guest'])->group(function () {
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
@@ -39,18 +40,39 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
 });
 
-// Route::middleware(['user'])->group(function () {
-    Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
-// });
 
-// Route::middleware(['driver'])->group(function () {
-    Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-// });
+// ADMIN
+Route::get('/admin/dashboard_admin', function () {
+    return view('admin/dashboard_admin');
+});
 
-// Route::middleware(['admin'])->group(function () {
+Route::get('/admin/kelola_rute', function () {
+    return view('admin/kelola_rute');
+});
+Route::get('/admin/kelola_jadwal', function () {
+    return view('admin/kelola_jadwal');
+});
+
+Route::get('/admin/kelola_supir', function () {
+    return view('admin/kelola_sopir');
+});
+
+Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-// });
+});
 
+
+// USER
+Route::middleware(['user'])->group(function () {
+    Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
+});
 Route::get('/dashboard_user/profile', function () {
     return view('user/profile');
 })->name('profile');
+
+
+// SOPIR
+Route::middleware(['driver'])->group(function () {
+    Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
+});
+

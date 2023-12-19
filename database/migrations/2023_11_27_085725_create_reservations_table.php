@@ -15,15 +15,14 @@ return new class extends Migration
             $table->id();
             $table->integer('route_start');
             $table->integer('route_end');
-            $table->boolean('direction');
             $table->integer('passenger_id');
             $table->integer('driver_id');
             $table->date('date');
             $table->string('token');
             $table->boolean('status');
             $table->integer('golf_cart_id');
-            $table->foreign('route_start')->references('id')->on('routes')->onDelete('cascade');
-            $table->foreign('route_end')->references('id')->on('routes')->onDelete('cascade');
+            $table->foreign('route_start')->references('id')->on('schedules')->onDelete('cascade');
+            $table->foreign('route_end')->references('id')->on('schedules')->onDelete('cascade');
             $table->foreign('passenger_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');
