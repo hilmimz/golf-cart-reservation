@@ -29,7 +29,7 @@
                         <input type="email" class="form-control" id="eMail" placeholder="douglas.mcgee@email.com">
                     </div>
                     <div class="form-group">
-                        <label for="eMail">Password</label>
+                        <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="******">
                     </div>
                     <div class="form-group">
