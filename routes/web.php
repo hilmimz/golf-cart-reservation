@@ -43,12 +43,13 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 // });
 
-Route::middleware(['driver'])->group(function () {
+// Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-});
-Route::middleware(['admin'])->group(function () {
+// });
+
+// Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-});
+// });
 
 Route::get('/dashboard_user/profile', function () {
     return view('user/profile');
