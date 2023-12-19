@@ -22,18 +22,38 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                        <input type="text" class="form-control" id="fullName" placeholder="Douglas McGee">
                         </div>
                     <div class="form-group">
                         <label for="eMail">Email</label>
-                        <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+                        <input type="email" class="form-control" id="eMail" placeholder="douglas.mcgee@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="eMail">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                        <input type="text" class="form-control" id="phone" placeholder="628957810298">
                     </div>
                 </div>
-                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+                        <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+
+<!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                         <label for="website">Website URL</label>
                         <input type="url" class="form-control" id="website" placeholder="Website url">
@@ -69,18 +89,3 @@
                     </div>
                 </div>
             </div> -->
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="text-right">
-                        <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                        <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-</body>
-</html>
