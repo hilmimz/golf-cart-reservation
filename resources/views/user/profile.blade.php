@@ -38,7 +38,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 <div class="container-fluid">
                         <div class="navbar-header align-items: left mr-4">
-                        <a class="navbar-brand font-weight-bold" href="#">Golf Cart</a> <!-- gabisa digeser ke kanan -->
+                        <a class="navbar-brand font-weight-bold">Golf Cart</a> <!-- gabisa digeser ke kanan -->
                         </div>
 
 
@@ -180,7 +180,7 @@
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                                    <h6 class="mb-2 text-primary">Personal Details</h6>
+                                                                    <h6 class="mb-3 text-primary">Personal Details</h6>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
