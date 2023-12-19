@@ -54,16 +54,16 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Password</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" name="password" placeholder="Enter Password">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                                     </div>
-                                    <div class="form-group mb-3">
+                                    <!-- <div class="form-group mb-3">
                                         <label for="formGroupExampleInput2">Masuk Sebagai</label>
                                         <select class="form-select" id="floatingSelect" name="type" aria-label="Floating label select example">
                                         @foreach ($types as $type)
                                         <option value={{ $type->id }}>{{ $type->name }}</option> 
                                         @endforeach
                                     </select>
-                                    </div>
+                                    </div> -->
                                     
                                     <div class="mt-5 text-center">
                                             <p>Belum memiliki akun? <a href="/register">Daftar di sini</a></p>

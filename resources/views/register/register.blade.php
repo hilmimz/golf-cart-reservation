@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Password</label>
-                                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                                     </div>
                                     <div class="mt-5 text-center">
                                             <p>Sudah memiliki akun? <a href="/login">Login di sini</a></p>

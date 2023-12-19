@@ -3732,7 +3732,7 @@ textarea.form-control-lg {
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-padding-y: 10px;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
@@ -11555,8 +11555,8 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: #dbdbdb;
+  background: linear-gradient(#dbdbdb, #dbdbdb);
 }
 
 .text-gradient {
@@ -11588,10 +11588,10 @@ html {
   max-width: 40rem;
 }
 .profile .profile-img {
-  height: 80vw;
-  max-height: 45rem;
+  height: 70%;
+  max-height: 70%;
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -11638,7 +11638,7 @@ html {
     width: 60vw;
   }
   .profile .profile-img {
-    height: 65vw;
+    height: 70%;
   }
   .profile .dots-1 {
     width: 3vw;
@@ -11663,7 +11663,7 @@ html {
     width: 50vw;
   }
   .profile .profile-img {
-    height: 55vw;
+    height: 70%;
   }
   .profile .dots-1 {
     width: 3vw;
@@ -11688,7 +11688,7 @@ html {
     width: 40vw;
   }
   .profile .profile-img {
-    height: 45vw;
+    height: 70%;
   }
   .profile .dots-1 {
     width: 1.5vw;
@@ -11713,7 +11713,7 @@ html {
     width: 35vw;
   }
   .profile .profile-img {
-    height: 40vw;
+    height: 70%;
   }
   .profile .dots-1 {
     width: 1.5vw;
