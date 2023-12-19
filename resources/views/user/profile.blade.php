@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="eMail">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="">
+                        <input type="password" class="form-control" id="password" placeholder="******">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
