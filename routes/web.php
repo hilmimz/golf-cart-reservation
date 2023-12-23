@@ -53,7 +53,7 @@ Route::middleware(['driver'])->group(function () {
 });
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-// });
+});
 
 
 // USER
