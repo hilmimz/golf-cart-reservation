@@ -7,8 +7,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DriverDashboardController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\CekJadwalController;
 use App\Http\Controllers\CekRuteController;
+use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\RiwayatController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,20 +37,22 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
         return view('landing-page/landing-page');
     });
-    Route::get('/cek_jadwal', [CekJadwalController::class, 'index'])->name('cek_jadwal');
     Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
+    Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
+    Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
+
 });
 
 // Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 // });
 
-Route::middleware(['driver'])->group(function () {
+// Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-});
-Route::middleware(['admin'])->group(function () {
+// });
+// Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
-});
+// });
 
 Route::get('/dashboard_user/profile', function () {
     return view('user/profile');

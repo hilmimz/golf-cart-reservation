@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CekJadwalController extends Controller
+class ReservasiController extends Controller
 {
     public function index(){
-        return view('user.cek_jadwal');
+        return view('user.reservasi');
     }
 }
