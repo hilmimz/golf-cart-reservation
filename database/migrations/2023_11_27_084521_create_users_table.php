@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('phone');
             $table->integer('type');
             $table->foreign('type')->references('id')->on('user_types')->onDelete('cascade');
         });

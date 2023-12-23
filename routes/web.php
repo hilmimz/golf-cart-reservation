@@ -8,6 +8,9 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DriverDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CekRuteController;
+use App\Http\Controllers\KelolaJadwalController;
+use App\Http\Controllers\KelolaRuteController;
+use App\Http\Controllers\KelolaSopirController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\RiwayatController;
 
@@ -55,6 +58,9 @@ Route::middleware(['guest'])->group(function () {
 // ADMIN
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
+    Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
+    Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
+    Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
 });
 
 

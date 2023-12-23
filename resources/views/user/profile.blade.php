@@ -101,7 +101,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" id="userDropdown">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -185,11 +185,11 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label for="fullName">Full Name</label>
-                                                                        <input type="text" class="form-control" id="fullName" placeholder="Douglas McGee">
+                                                                        <input type="text" class="form-control" id="fullName" placeholder="Nama" value="{{auth()->user()->name}}">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="eMail">Email</label>
-                                                                        <input type="email" class="form-control" id="eMail" placeholder="douglas.mcgee@email.com">
+                                                                        <input type="email" class="form-control" id="eMail" placeholder="email" value="{{auth()->user()->email}}">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="password">Password</label>
@@ -197,7 +197,7 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="phone">Phone</label>
-                                                                        <input type="text" class="form-control" id="phone" placeholder="628957810298">
+                                                                        <input type="text" class="form-control" id="phone" placeholder="628957810298" value="{{auth()->user()->phone}}"
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

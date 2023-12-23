@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'user1',
             'email' => 'user1@gmail.com',
             'password' => Hash::make('user1'),
+            'phone' => '081234567890',
             'type' => 1
         ]);
         DB::table('users')->insert(
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'driver1',
             'email' => 'driver1@gmail.com',
             'password' => Hash::make('driver1'),
+            'phone' => '081234567891',
             'type' => 2
         ]);
         DB::table('users')->insert(
@@ -44,6 +46,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin1',
             'email' => 'admin1@gmail.com',
             'password' => Hash::make('admin1'),
+            'phone' => '081234567892',
             'type' => 3
         ]);
     }
