@@ -29,6 +29,7 @@ use App\Http\Controllers\RiwayatController;
 
 Route::get('/test', [TestDatabase::class, 'test']);
 
+// GUEST
 Route::middleware(['guest'])->group(function () {
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
@@ -47,13 +48,25 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 // });
 
-// Route::middleware(['driver'])->group(function () {
+Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-// });
-// Route::middleware(['admin'])->group(function () {
+});
+Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
 // });
 
+
+// USER
+Route::middleware(['user'])->group(function () {
+    Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
+});
 Route::get('/dashboard_user/profile', function () {
     return view('user/profile');
 })->name('profile');
+
+
+// SOPIR
+Route::middleware(['driver'])->group(function () {
+    Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
+});
+

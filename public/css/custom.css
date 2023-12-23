@@ -1,0 +1,183 @@
+html {
+    font-family: "Poppins";
+}
+
+.navbar-custom {
+    background-color: #3bafda;
+}
+i.fa-bars {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.btn {
+    text-transform: uppercase;
+}
+.btn-primary.dropdown-toggle {
+    background-color: #3bafda;
+}
+img.rounded {
+    object-fit: cover;
+    margin: 0px 10px;
+    border-radius: 50% !important;
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+}
+
+img.rounded-big {
+    object-fit: cover;
+    margin-top: 25%;
+    border-radius: 50% !important;
+    height: 200px;
+    width: 200px;
+    border: 15px solid white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.sidenav a i {
+    font-size: 50px;
+}
+.sidenav a p {
+    font-size: 12px;
+}
+
+body {
+    padding-top: 70px;
+    background-color: #ebf2fc;
+}
+html,
+body {
+    /* height: 100vh; */
+    height: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.row {
+    width: 100%;
+}
+
+.profile-text {
+    background-color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px 0px;
+    font-family: "Poppins";
+}
+
+table.rounded-corners {
+    border-spacing: 0px 10px;
+    border-collapse: separate;
+}
+table.rounded-corners tr {
+    background-color: white;
+    box-shadow: 0px 3px lightgray;
+}
+.container.col-lg-7.shadow{
+    margin-top: 50px;
+}
+.blue-box {
+    background-color: blue;
+    color: white;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 25px;
+    margin-top: 7px;
+}
+
+.red-box {
+    background-color: red;
+    color: white;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 25px;
+    margin-top: 7px;
+}
+
+.green-box {
+    background-color: green;
+    color: white;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 25px;
+    margin-top: 7px;
+}
+
+.status-p {
+    text-align: center;
+    color: white;
+    display: inline-block;
+    border-radius: 25px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+.status-p.p-processing {
+    background-color: #1096cf;
+}
+.status-p.p-approved {
+    background-color: #30c00c;
+}
+.status-p.p-rejected {
+    background-color: #f80606;
+}
+.btn-detail {
+    border: none;
+    padding: 4px 18px;
+    border-radius: 5%;
+    background-color: #f1d644;
+    font-size: 13px !important;
+    color: black;
+    margin: 0px;
+}
+.btn-detail:hover {
+    background-color: #ffea7e;
+}
