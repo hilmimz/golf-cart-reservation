@@ -45,12 +45,14 @@ Route::middleware(['guest'])->group(function () {
 });
 
 // Route::middleware(['user'])->group(function () {
-    Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
+//     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
 // });
 
-Route::middleware(['driver'])->group(function () {
-    Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
-});
+// Route::middleware(['driver'])->group(function () {
+//     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
+// });
+
+// ADMIN
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard_admin', [AdminDashboardController::class, 'index'])->name('dashboard_admin');
 });
@@ -59,10 +61,10 @@ Route::middleware(['admin'])->group(function () {
 // USER
 Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
+    Route::get('/dashboard_user/profile', function () {
+        return view('user/profile');
+    })->name('profile');
 });
-Route::get('/dashboard_user/profile', function () {
-    return view('user/profile');
-})->name('profile');
 
 
 // SOPIR
@@ -70,3 +72,5 @@ Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
 });
 
+// OTHERS
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

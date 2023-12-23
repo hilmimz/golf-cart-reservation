@@ -15,8 +15,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->guest() || !auth()->user()->type == 3) {
+        if(auth()->guest()) {
             abort(403);
+        }
+        elseif (auth()->user()->type == 1) {
+            return redirect('/dashboard_user');
+        }
+        elseif (auth()->user()->type == 2) {
+            return redirect('/dashboard_driver');
         }
         return $next($request);
     }

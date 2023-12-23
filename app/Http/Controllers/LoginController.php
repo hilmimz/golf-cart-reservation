@@ -20,27 +20,25 @@ class LoginController extends Controller
     {
         $request->validate([
             'email' => 'required|email:dns',
-            'password' => 'required',
-            'type' => 'required'
+            'password' => 'required'
         ]);
 
         $credentials = [
             'email' => $request->email,
-            'password' => $request->password,
-            'type' => $request->type
+            'password' => $request->password
 
         ];
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            if ($credentials['type'] == 1){
+            if (Auth::user()->type == 1){
                 return redirect()->intended('/dashboard_user');
             }
-            if ($credentials['type'] == 2){
+            if (Auth::user()->type == 2){
                 return redirect()->intended('/dashboard_driver');
             }
-            if ($credentials['type'] == 3){
+            if (Auth::user()->type == 3){
                 return redirect()->intended('/dashboard_admin');
             }
         }
@@ -56,6 +54,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 }

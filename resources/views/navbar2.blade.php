@@ -15,7 +15,7 @@
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="">Logout</a>
+                <a class="dropdown-item" href={{route('logout')}}>Logout</a>
             </div>
         </div>
     </nav>
