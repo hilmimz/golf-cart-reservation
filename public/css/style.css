@@ -11587,9 +11587,18 @@ html {
   max-height: 40rem;
   max-width: 40rem;
 }
+.profile .profile-bg {
+  height: 95%;
+  max-height: 95%;
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .profile .profile-img {
-  height: 70%;
-  max-height: 70%;
+  height: 64%;
+  max-height: 64%;
   position: absolute;
   bottom: 15%;
   left: 50%;

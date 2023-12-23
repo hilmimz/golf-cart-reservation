@@ -26,28 +26,38 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+
             <!-- Main Content -->
             <div id="content">
+
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 <div class="container-fluid">
                         <div class="navbar-header align-items: left mr-4">
-                        <a class="navbar-brand font-weight-bold" href="#">Golf Cart</a> <!-- gabisa digeser ke kanan -->
+                        <a class="navbar-brand font-weight-bold" href="{{ route('dashboard_user') }}">Golf Cart</a> <!-- gabisa digeser ke kanan -->
                         </div>
+
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Driver Kesatu</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -58,88 +68,123 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Content Row -->
-                    <!-- <div class="row"> -->
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <!-- <div class="col-xl-6 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xL font-weight-bold text-primary text-uppercase mt-2">Jadwal</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <!-- <div class="col-xl-6 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xl font-weight-bold text-success text-uppercase mt-2">Riwayat</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-history fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+            
+            <!-- Pesan -->
+            <div class="container-fluid d-flex justify-content-center">
 
                     <!-- Content Row -->
 
-                    <div class="row">
+                    <div class="row col-10">
 
                         <!-- Area Chart -->
                         <div class="col-xl col-lg-7">
                             <div class="card shadow mb-4">
                                 <div class="card-body">
-                                <div class="center-container">
-                                        <div class="container d-flex justify-content-center">
-                                            <div class="row">
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                                    <h4 class="mb-4 text-primary">Validasi Reservasi</h4>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label for="fullName">Kode Reservasi</label>
-                                                                        <input type="text" class="form-control" id="bookCode" placeholder="Masukan kode reservasi">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                                    <div class="text-right mt-3">
-                                                                        <button type="button" id="cancel" name="cancel" class="btn btn-secondary mr-2">Cancel</button>
-                                                                        <button type="button" id="update" name="update" class="btn btn-primary">Accept</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                <div class="container-fluid custom-container ml-2">
+                                    
+                                <div class="row">
+                                    <div class="col-6 d-flex justify-content-start">
+                                        <h5 class="card-title">Kode Pemesanan: QE2</h5> <!-- Replace with your actual reservation code --></h5>
+                                    </div>
+
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <div>
+                                        <span class="badge badge-pill badge-primary">Dipesan</span>         
                                         </div>
                                     </div>
+                                </div>
+
+                                <hr class="my-2 mb-4">
+
+                                
+                            <div class="row align-items-center">
+                                <div class="col-md-5 custom-content">
+                                    <h5>Golf Cart 1</h5>
+                                </div>
+                                <div class="col-md-3 custom-content">
+                                    <h6>07:30</h6>
+                                    <p>Halte A</p>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:40</h6>
+                                    <p>Halte B</p>
+                                </div>
+        
+                                    </div>
+                                </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <!-- End of Main Content -->
+            </div>
+
+            <div class="container-fluid d-flex justify-content-center">
+
+                <!-- Content Row -->
+                <div class="row col-10">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+
+                                <div class="container-fluid custom-container ml-2">
+                                    
+                                <div class="row">
+                                    <div class="col-6 d-flex justify-content-start">
+                                        <h5 class="card-title">Kode Pemesanan: QW9</h5> <!-- Replace with your actual reservation code --></h5>
+                                    </div>
+
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <div>
+                                        <span class="badge badge-pill badge-success">Selesai</span>         
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-2 mb-4">
+
+                                
+                            <div class="row align-items-center">
+                                <div class="col-md-5 custom-content">
+                                    <h5>Golf Cart 1</h5>
+                                </div>
+                                <div class="col-md-3 custom-content">
+                                    <h6>07:30</h6>
+                                    <p>Halte A</p>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                </svg>
+                                </div>
+                                <div class="col-md-2 custom-content">
+                                    <h6>07:40</h6>
+                                    <p>Halte B</p>
+                                </div>
+        
+                                    </div>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+             </div>
+         </div>
+         </div> 
+            
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -181,7 +226,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Bootstrap core JavaScript-->
     <script src="{{('template/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
