@@ -13,7 +13,7 @@ use App\Http\Controllers\KelolaRuteController;
 use App\Http\Controllers\KelolaSopirController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\RiwayatController;
-
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,9 +67,7 @@ Route::middleware(['admin'])->group(function () {
 // USER
 Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
-    Route::get('/dashboard_user/profile', function () {
-        return view('user/profile');
-    })->name('profile');
+    Route::resource('/dashboard_user/profile', UserProfileController::class);
 });
 
 

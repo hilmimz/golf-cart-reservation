@@ -106,7 +106,7 @@
                             <!-- Dropdown - User Information -->
                             <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                <a class="dropdown-item" href="">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -178,35 +178,40 @@
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="row">
+                                                            @if($errors->any())
+    {{ implode('', $errors->all('<div>:message</div>')) }}
+@endif
+                                                            <div class="row"> <form action="{{ route('profile.update', auth()->user()->id) }}" method="post">
+                                                                @csrf
+                                                                @method('put')
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <h6 class="mb-3 text-primary">Personal Details</h6>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label for="fullName">Full Name</label>
-                                                                        <input type="text" class="form-control" id="fullName" placeholder="Nama" value="{{auth()->user()->name}}">
+                                                                        <input type="text" class="form-control" id="fullName" name="name" placeholder="Nama" value="{{auth()->user()->name}}">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="eMail">Email</label>
-                                                                        <input type="email" class="form-control" id="eMail" placeholder="email" value="{{auth()->user()->email}}">
+                                                                        <input type="email" class="form-control" id="eMail" name="email" placeholder="Email" value="{{auth()->user()->email}}">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="password">Password</label>
-                                                                        <input type="password" class="form-control" id="password" placeholder="******">
+                                                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="phone">Phone</label>
-                                                                        <input type="text" class="form-control" id="phone" placeholder="628957810298" value="{{auth()->user()->phone}}"
+                                                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="628957810298" value="{{auth()->user()->phone}}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <div class="text-right mt-3">
-                                                                        <button type="button" id="cancel" name="cancel" class="btn btn-secondary mr-2">Cancel</button>
-                                                                        <button type="button" id="update" name="update" class="btn btn-primary">Update</button>
+                                                                        <button type="button" id="cancel" name="cancel" class="btn btn-secondary mr-2"> <a href="{{ route('dashboard_user') }}" style="color:white;">Cancel</a></button>
+                                                                        <button type="submit" id="update" name="update" class="btn btn-primary">Update</button>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div></form>
                                                         </div>
                                                     </div>
                                                 </div>
