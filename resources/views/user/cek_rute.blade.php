@@ -48,12 +48,12 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                <a class="dropdown-item" href="{{ route('profile.index') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -87,26 +87,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($routes as $key => $route)
                                         <tr>
-                                            <td>Halte A</td>
-                                            <td>Halte B</td>
+                                            <td>{{ $route->name }}</td>
+                                            @if ($key+1 >= $count)
+                                                <td>{{ $routes[0]->name }}</td>
+                                            @else
+                                                <td>{{ $routes[$key+1]->name }}</td>
+                                            @endif
                                         </tr>
-                                        <tr>
-                                            <td>Halte B</td>
-                                            <td>Halte C</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Halte C</td>
-                                            <td>Halte D</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Halte D</td>
-                                            <td>Halte E</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Halte E</td>
-                                            <td>Halte A</td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

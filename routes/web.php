@@ -41,10 +41,6 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
         return view('landing-page/landing-page');
     });
-    Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
-    Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
-    Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
-
 });
 
 // Route::middleware(['user'])->group(function () {
@@ -69,6 +65,9 @@ Route::middleware(['admin'])->group(function () {
 Route::middleware(['user'])->group(function () {
     Route::get('/dashboard_user', [UserDashboardController::class, 'index'])->name('dashboard_user');
     Route::resource('/dashboard_user/profile', UserProfileController::class);
+    Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
+    Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
+    Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
 });
 
 
