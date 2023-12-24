@@ -35,25 +35,25 @@
                   <tr>
                     <td>
                       Route Start
-                      <div class="input-group input-group-sm mx-auto my-1">
-                        <select class="form-select" aria-label="Pilih nama produk" name="route_start" id="pertanyaan">
-                          @foreach ($routes as $route)
-                          <option value="{{ $route->id }}">{{ $route->name }}</option>
-                          @endforeach
-                      </select>
-                      </div>
+                          <div class="form-group">
+                            <select class="form-control" name="golf_cart_id"name="route_start" id="exampleFormControlSelect1">
+                              @foreach ($routes as $route)
+                              <option value="{{ $route->id }}">{{ $route->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      Golf Cart ID
-                      <div class="input-group input-group-sm mx-auto my-1">
-                        <select class="form-select" aria-label="Pilih nama produk" name="golf_cart_id" id="pertanyaan">
-                          @foreach ($golf_carts as $golf_cart)
-                          <option value="{{ $golf_cart->id }}">{{ $golf_cart->name }}</option>
-                          @endforeach
-                      </select>
-                      </div>
+                          Golf Cart ID
+                          <div class="form-group">
+                            <select class="form-control" name="golf_cart_id" id="exampleFormControlSelect1">
+                              @foreach ($golf_carts as $golf_cart)
+                              <option value="{{ $golf_cart->id }}">{{ $golf_cart->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
                     </td>
                   </tr>
                 </table>
@@ -246,7 +246,3 @@
     </div>
 
 </div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
