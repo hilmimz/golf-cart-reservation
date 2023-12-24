@@ -61,6 +61,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
     Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
     Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
+    Route::match(['put', 'patch'], '/dashboard_admin/rute',[KelolaRuteController::class, 'fixOrder'])->name('rute.fix');
 });
 
 
