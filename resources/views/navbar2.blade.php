@@ -23,9 +23,10 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{{ url('/dashboard_admin') }}" style="margin-top: 200%"><i class="fa fa-home"></i><p>Home</p></a>
-        <a href="{{ url('/dashboard_admin/rute') }}"><i class="fa fa-bus"></i><p>Ubah Rute</p></a>
+        <a href="{{ url('/dashboard_admin/rute') }}"><i class="fa fa-road"></i><p>Ubah Rute</p></a>
         <a href="{{ url('/dashboard_admin/jadwal') }}"><i class="fa fa-calendar"></i><p>Ubah Jadwal</p></a>
         <a href="{{ url('/dashboard_admin/sopir') }}"><i class="fa fa-male"></i><p>Kelola Supir</p></a>
+        <a href="{{ url('/dashboard_admin/') }}"><i class="fa fa-bus"></i><p>Kelola Golf Cart</p></a>
     </div>
     <!-- end navbar -->
 
