@@ -21,7 +21,7 @@ class GolfCartsModel extends Model
 
     public function schedules(): HasMany
     {
-        return $this->hasMany(SchedulesModel::class,'golf_cart_id','id');
+        return $this->hasMany(ScheduleTimeModel::class,'golf_cart_id','id');
     }
 
     public function reservations(): HasMany

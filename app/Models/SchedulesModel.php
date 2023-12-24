@@ -12,22 +12,22 @@ class SchedulesModel extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'routes';
+    protected $table = 'schedules';
     protected $primaryKey = 'id';
 
     protected $fillable =[
         'time',
-        'route_start'
+        'route_start',
+        'schedule_time_id'
     ];
 
     public function route(): BelongsTo
     {
         return $this->belongsTo(RoutesModel::class, 'route_start', 'id');
     }
-
-    public function golf_cart(): BelongsTo
+    public function schedule_time(): BelongsTo
     {
-        return $this->belongsTo(GolfCartsModel::class,'golf_cart_id','id');
+        return $this->belongsTo(ScheduleTimeModel::class,'schedule_time_id','id');
     }
 
     public function route_start_reservations(): HasMany

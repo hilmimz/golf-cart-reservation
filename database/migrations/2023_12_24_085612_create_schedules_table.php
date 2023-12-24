@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->time('time');
+            $table->timestamp('time');
             $table->integer('route_start');
-            $table->integer('golf_cart_id');
+            $table->integer('schedule_time_id');
             $table->foreign('route_start')->references('id')->on('routes')->onDelete('cascade');
-            $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');
+            $table->foreign('schedule_time_id')->references('id')->on('schedule_time')->onDelete('cascade');
         });
     }
 

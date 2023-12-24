@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RoutesModel;
+use App\Models\SchedulesModel;
 use Illuminate\Http\Request;
 
 class KelolaRuteController extends Controller
@@ -34,7 +34,7 @@ class KelolaRuteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RoutesModel $routesModel)
+    public function show(SchedulesModel $schedulesModel)
     {
         //
     }
@@ -42,7 +42,7 @@ class KelolaRuteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RoutesModel $routesModel)
+    public function edit(SchedulesModel $schedulesModel)
     {
         //
     }
@@ -50,7 +50,7 @@ class KelolaRuteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RoutesModel $routesModel)
+    public function update(Request $request, SchedulesModel $schedulesModel)
     {
         //
     }
@@ -58,7 +58,7 @@ class KelolaRuteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RoutesModel $routesModel)
+    public function destroy(SchedulesModel $schedulesModel)
     {
         //
     }

@@ -49,5 +49,54 @@ class DatabaseSeeder extends Seeder
             'phone' => '081234567892',
             'type' => 3
         ]);
+
+        DB::table('golf_carts')->insert(
+            [
+                'name' => 'Burok',
+                'max_seat' => 5
+            ]
+        );
+        DB::table('golf_carts')->insert(
+            [
+                'name' => 'Golf Cart Siapa',
+                'max_seat' => 4
+            ]
+        );
+
+        DB::table('routes')->insert(
+            [
+                'name' => 'Halte Gerbang Depan',
+                'order' => 1,
+                'time_to_next_stop' => 5
+            ]
+        );
+        DB::table('routes')->insert(
+            [
+                'name' => 'Halte FT',
+                'order' => 2,
+                'time_to_next_stop' => 10
+            ]
+        );
+        DB::table('routes')->insert(
+            [
+                'name' => 'Halte FEB',
+                'order' => 3,
+                'time_to_next_stop' => 15
+            ]
+        );
+        DB::table('routes')->insert(
+            [
+                'name' => 'Halte Gerbang Belakang',
+                'order' => 4,
+                'time_to_next_stop' => 5
+            ]
+        );
+        DB::table('routes')->insert(
+            [
+                'name' => 'Halte FMIPA',
+                'order' => 5,
+                'time_to_next_stop' => 10
+            ]
+        );
     }
 }

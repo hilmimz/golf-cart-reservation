@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('routes', function (Blueprint $table) {
+        Schema::create('schedule_time', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('order')->unique();
-            $table->integer('time_to_next_stop');
+            $table->timestamp('start');
+            $table->timestamp('end');
+            $table->integer('golf_cart_id');
+            $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('routes');
+        Schema::dropIfExists('schedule_time');
     }
 };
