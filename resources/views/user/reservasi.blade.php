@@ -173,7 +173,8 @@
                                 <div class="container-fluid custom-container">
                                     <div class="row align-items-center">
                                         <div class="col-md-3 custom-content">
-                                            <h5>{{ $golf_cart->name }}</h5>
+                                            <h5>{{ $golf_cart_name }}</h5>
+                                            Sisa Kursi: {{ $result['seat_left'] }}
                                         </div>
                                         <div class="col-md-2 custom-content">
                                             <h6>{{ \Carbon\Carbon::parse($result['start_time'])->format('H:i') }}</h6>
@@ -189,7 +190,7 @@
                                             <p>{{ $route_end->name }}</p>
                                         </div>
                                     <div class="col-md-3 custom-content d-flex justify-content-center">
-                                    <button type="button" class="btn {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now) ? "btn-secondary" : "btn-primary" }}" data-toggle="modal" data-target="#exampleModalCenter-{{ $key }}" {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now) ? "disabled" : "" }}>
+                                    <button type="button" class="btn {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now or $result['seat_left'] == 0) ? "btn-secondary" : "btn-primary" }}" data-toggle="modal" data-target="#exampleModalCenter-{{ $key }}" {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now or $result['seat_left'] == 0) ? "disabled" : "" }}>
                                     Pesan
                                     </button>
 

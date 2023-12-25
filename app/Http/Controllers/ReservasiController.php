@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 class ReservasiController extends Controller
 {
     public function index(Request $request){
-        // dd($this->seat_left(46, 50, 1));
+        // dd($this->seat_left(196, 198, 2));
         $this->validate($request, [
             'start' => 'required',
             'end' => 'required',
@@ -44,8 +44,10 @@ class ReservasiController extends Controller
         // dd($results);
         $route_start = RoutesModel::find($start);
         $route_end = RoutesModel::find($end);
-        $golf_cart = GolfCartsModel::find($golf_cart_id);
-        return view('user.reservasi', compact(['results','route_start','route_end','golf_cart','now', 'routes', 'golf_carts']));
+        $golf_cart = GolfCartsModel::where('id',$golf_cart_id)->pluck('name');
+        // dd($golf_cart[0]);
+        $golf_cart_name = $golf_cart[0];
+        return view('user.reservasi', compact(['results','route_start','route_end','golf_cart','golf_cart_name','now', 'routes', 'golf_carts']));
     }
 
     public function findSchedule($start, $end, $schedules, $golf_cart_id){
@@ -76,6 +78,8 @@ class ReservasiController extends Controller
                 $inRange = false;
                 $currentGroup['end_id'] = $item->id;
                 $currentGroup['end_time'] = $item->time;
+                $seat = $this->seat_left($currentGroup['start_id'], $currentGroup['end_id'], $currentGroup['golf_cart_id']);
+                $currentGroup['seat_left'] = $seat;
                 $result[] = $currentGroup;
             }
         }
@@ -84,12 +88,12 @@ class ReservasiController extends Controller
     }
 
     public function reservation(Request $request, ReservationsModel $reservationsModel){
-        $this->validate($request, [
+        $valid = $this->validate($request, [
             'route_start' => 'required',
             'route_end' => 'required',
             'golf_cart_id' => 'required'
         ]);
-
+        // dd($valid);
         // dd($request->route_end);
         $token = Str::random(6);
         while ($token == $reservationsModel->where('token', $token)->pluck('token')) {
@@ -110,14 +114,15 @@ class ReservasiController extends Controller
     }
 
     public function seat_left($route_start, $route_end, $golf_cart_id){
-        $result = DB::connection('oracle')
-            ->select("BEGIN :result := seat_left(:routeStart, :routeEnd, :golfCartId); END;", [
-                ':routeStart' => $route_start,
-                ':routeEnd' => $route_end,
-                ':golfCartId' => $golf_cart_id,
-                ':result' => null, // Output parameter
-            ]);
-
-        return $result[0]->result;
-    }
+        $pdo = DB::connection('oracle')->getPdo();
+        $stmt = $pdo->prepare("BEGIN :result := seat_left(:routeStart, :routeEnd, :golfCartId); END;");
+        $stmt->bindParam(':routeStart', $route_start, \PDO::PARAM_INT);
+        $stmt->bindParam(':routeEnd', $route_end, \PDO::PARAM_INT);
+        $stmt->bindParam(':golfCartId', $golf_cart_id, \PDO::PARAM_INT);
+        $stmt->bindParam(':result', $result, \PDO::PARAM_INT, 32); // Assuming 32 is the maximum size of the returned value
+    
+        $stmt->execute();
+    
+        return $result;
+    } 
 }
