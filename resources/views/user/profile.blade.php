@@ -115,20 +115,21 @@
                         <div class="col-xl col-lg-7">
                             <div class="card shadow mb-4">
                                 <div class="card-body">
-                                    <div class="center-container">
+                                <div class="center-container">
                                         <div class="container d-flex justify-content-center">
                                             <div class="row">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                    <div class="card">
                                                         <div class="card-body">
                                                             @if($errors->any())
-    {{ implode('', $errors->all('<div>:message</div>')) }}
-@endif
-                                                            <div class="row"> <form action="{{ route('profile.update', auth()->user()->id) }}" method="post">
+                                                                {{ implode('', $errors->all('<div>:message</div>')) }}
+                                                            @endif
+
+                                                            <form action="{{ route('profile.update', auth()->user()->id) }}" method="post">
                                                                 @csrf
                                                                 @method('put')
+                                                                <div class="row">
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                                    <h6 class="mb-3 text-primary">Personal Details</h6>
+                                                                    <h4 class="mb-4 text-primary">Personal Profile</h4>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
@@ -154,7 +155,8 @@
                                                                         <button type="submit" id="update" name="update" class="btn btn-primary">Update</button>
                                                                     </div>
                                                                 </div>
-                                                            </div></form>
+                                                            </div>
+                                                        </form>
                                                         </div>
                                                     </div>
                                                 </div>
