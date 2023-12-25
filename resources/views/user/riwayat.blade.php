@@ -134,8 +134,9 @@
                                                 <p>Apakah anda yakin membatalkan reservasi golf cart dari {{ $reservation->start->name }} dengan tujuan {{ $reservation->end->name }}?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{ route('reservasi.pesan') }}" method="post">
+                                                <form action="{{ route('riwayat.batal', $reservation->id) }}"method="post">
                                                     @csrf
+                                                    @method('put')
                                                     <input type="hidden" name="golf_cart_id" value="{{ $reservation->id }}">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                                                     <button type="submit" class="btn btn-primary">Iya</button>
@@ -154,8 +155,8 @@
                         </div>
                     </div>
             </div>
-            @endforeach
          </div> 
+         @endforeach
             
 
             <!-- Footer -->

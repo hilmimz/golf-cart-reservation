@@ -76,6 +76,7 @@ Route::middleware(['user'])->group(function () {
     Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
     Route::post('/reservasi/pesan', [ReservasiController::class, 'reservation'])->name('reservasi.pesan');
     Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
+    Route::match(['put', 'patch'], '/riwayat/batal/{id}',[RiwayatController::class, 'batal'])->name('riwayat.batal');
 });
 
 
