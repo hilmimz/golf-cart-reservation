@@ -214,7 +214,7 @@
                       @csrf
                       @method('put')
                       <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Update Pertanyaan</h5>
+                        <h5 class="modal-title" id="editModalLabel">Update Jadwal</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -232,7 +232,7 @@
                         </div>
                           <div class="form-group">
                             <label for="pertanyaan">Golf Cart ID</label>
-                            <select class="form-select" aria-label="Pilih nama produk" name="golf_cart_id" id="pertanyaan">
+                            <select class="form-control" name="golf_cart_id" id="exampleFormControlSelect1">
                               @foreach ($golf_carts as $golf_cart)
                               <option value="{{ $golf_cart->id }}" {{ ($golf_cart->id == $schedule_time->golf_cart_id) ? "selected" : "" }}>{{ $golf_cart->name }}</option>
                               @endforeach
