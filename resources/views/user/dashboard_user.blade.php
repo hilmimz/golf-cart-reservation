@@ -70,6 +70,11 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
 
                     <!-- Content Row -->
                     <div class="row">

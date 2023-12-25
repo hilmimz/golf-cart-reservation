@@ -26,6 +26,9 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+        {{-- @foreach ($reservations as $item)
+            {{ $item }}
+        @endforeach --}}
 
 
         <!-- Content Wrapper -->
@@ -53,7 +56,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                <a class="dropdown-item" href="{{ route('profile.index') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -70,6 +73,7 @@
 
             
             <!-- Pesan -->
+            @foreach ($reservations as $reservation)
             <div class="container-fluid d-flex justify-content-center">
 
                     <!-- Content Row -->
@@ -85,12 +89,12 @@
                                     
                                 <div class="row">
                                     <div class="col-6 d-flex justify-content-start">
-                                        <h5 class="card-title">Kode Pemesanan: QE2</h5> <!-- Replace with your actual reservation code --></h5>
+                                        <h5 class="card-title">Kode Pemesanan: {{ $reservation->token }}</h5> <!-- Replace with your actual reservation code --></h5>
                                     </div>
 
                                     <div class="col-6 d-flex justify-content-end">
                                         <div>
-                                        <span class="badge badge-pill badge-primary">Dipesan</span>         
+                                        <span class="badge badge-pill {{ ($reservation->status == 1) ? "badge-primary" : "badge-secondary" }}">{{ ($reservation->status == 1) ? "Aktif" : "Selesai" }}</span>         
                                         </div>
                                     </div>
                                 </div>
@@ -100,11 +104,11 @@
                                 
                             <div class="row align-items-center">
                                 <div class="col-md-5 custom-content">
-                                    <h5>Golf Cart 1</h5>
+                                    <h5>{{ $reservation->golf_cart->name }}</h5>
                                 </div>
                                 <div class="col-md-3 custom-content">
-                                    <h6>07:30</h6>
-                                    <p>Halte A</p>
+                                    <h6>{{ \Carbon\Carbon::parse($reservation->start->time)->format('H:i') }}</h6>
+                                    <p>{{ $reservation->start->route->name }}</p>
                                 </div>
                                 <div class="col-md-2 custom-content">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -112,8 +116,8 @@
                                 </svg>
                                 </div>
                                 <div class="col-md-2 custom-content">
-                                    <h6>07:40</h6>
-                                    <p>Halte B</p>
+                                    <h6>{{ \Carbon\Carbon::parse($reservation->end->time)->format('H:i') }}</h6>
+                                    <p>{{ $reservation->end->route->name }}</p>
                                 </div>
         
                                     </div>
@@ -124,65 +128,7 @@
                         </div>
                     </div>
             </div>
-
-            <div class="container-fluid d-flex justify-content-center">
-
-                <!-- Content Row -->
-                <div class="row col-10">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl col-lg-7">
-                            <div class="card shadow mb-4">
-                                <div class="card-body">
-
-                                <div class="container-fluid custom-container ml-2">
-                                    
-                                <div class="row">
-                                    <div class="col-6 d-flex justify-content-start">
-                                        <h5 class="card-title">Kode Pemesanan: QW9</h5> <!-- Replace with your actual reservation code --></h5>
-                                    </div>
-
-                                    <div class="col-6 d-flex justify-content-end">
-                                        <div>
-                                        <span class="badge badge-pill badge-success">Selesai</span>         
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr class="my-2 mb-4">
-
-                                
-                            <div class="row align-items-center">
-                                <div class="col-md-5 custom-content">
-                                    <h5>Golf Cart 1</h5>
-                                </div>
-                                <div class="col-md-3 custom-content">
-                                    <h6>07:30</h6>
-                                    <p>Halte A</p>
-                                </div>
-                                <div class="col-md-2 custom-content">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                                </svg>
-                                </div>
-                                <div class="col-md-2 custom-content">
-                                    <h6>07:40</h6>
-                                    <p>Halte B</p>
-                                </div>
-        
-                                    </div>
-                                </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-             </div>
-         </div>
+            @endforeach
          </div> 
             
 

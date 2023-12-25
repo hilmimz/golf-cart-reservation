@@ -69,6 +69,7 @@ Route::middleware(['user'])->group(function () {
     Route::resource('/dashboard_user/profile', UserProfileController::class);
     Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
     Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
+    Route::post('/reservasi/pesan', [ReservasiController::class, 'reservation'])->name('reservasi.pesan');
     Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
 });
 

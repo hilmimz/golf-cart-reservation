@@ -150,7 +150,7 @@
 
             
             <!-- Pesan -->
-            @foreach ($results as $result)
+            @foreach ($results as $key => $result)
             <div class="container-fluid d-flex justify-content-center">
 
                     <!-- Content Row -->
@@ -179,13 +179,13 @@
                                             <p>{{ $route_end->name }}</p>
                                         </div>
                                     <div class="col-md-3 custom-content d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= \Carbon\Carbon::now()) ? "disabled" : "" }}>
+                                    <button type="button" class="btn {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now) ? "btn-secondary" : "btn-primary" }}" data-toggle="modal" data-target="#exampleModalCenter-{{ $key }}" {{ (\Carbon\Carbon::parse($result['start_time'])->format('H:i') <= $now) ? "disabled" : "" }}>
                                     Pesan
                                     </button>
 
 
                                     <!-- Modal -->
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModalCenter-{{ $key }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                             <div class="modal-header">
@@ -195,15 +195,17 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Terima kasih telah melakukan reservasi di website kami.</p>
-                                                <p>Kode pesanan Anda adalah: QE2 <strong id="kodePesanan"></strong></p>
-                                                <p>Silakan simpan kode pesanan ini untuk keperluan konfirmasi.</p>
+                                                <p>Apakah anda yakin melakukan reservasi golf cart dari {{ $route_start->name }} dengan tujuan {{ $route_end->name }}?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                                <a href="{{ route('dashboard_user') }}">
-                                                <button type="button" class="btn btn-primary">Simpan</button>
-                                                </a>
+                                                <form action="{{ route('reservasi.pesan') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="route_start" value="{{ $result['start_id'] }}">
+                                                    <input type="hidden" name="route_end" value="{{ $result['end_id'] }}">
+                                                    <input type="hidden" name="golf_cart_id" value="{{ $result['golf_cart_id'] }}">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                                    <button type="submit" class="btn btn-primary">Iya</button>
+                                                </form>
                                             </div>
                                             </div>
                                         </div>
@@ -219,50 +221,6 @@
                     </div>
                 </div>
                 @endforeach
-
-            <div class="container-fluid d-flex justify-content-center">
-
-                <!-- Content Row -->
-
-                <div class="row col-10">
-
-                    <!-- Area Chart -->
-                    <div class="col-xl col-lg-7">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-
-                            <div class="container-fluid custom-container">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 custom-content">
-                                    <h5>Golf Cart 1</h5>
-                                </div>
-                                <div class="col-md-2 custom-content">
-                                    <h6>07:40</h6>
-                                    <p>Halte B</p>
-                                </div>
-                                <div class="col-md-2 custom-content">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                                </svg>
-                                </div>
-                                <div class="col-md-2 custom-content">
-                                    <h6>07:50</h6>
-                                    <p>Halte C</p>
-                                </div>
-                                <div class="col-md-3 custom-content d-flex justify-content-center">
-                                <button type="button" class="btn btn-secondary text-right mb-4" disabled>Pesan</button>
-                                </div>
-                                </div>
-                            </div>
-
-                            
-
-                     </div>
-                 </div>
-             </div>
-         </div>
-         </div> 
-            
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

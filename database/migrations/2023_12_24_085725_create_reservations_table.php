@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('route_start');
             $table->integer('route_end');
             $table->integer('passenger_id');
-            $table->integer('driver_id');
+            $table->integer('driver_id')->nullable();
             $table->date('date');
             $table->string('token');
             $table->boolean('status');
