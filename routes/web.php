@@ -8,6 +8,7 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DriverDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CekRuteController;
+use App\Http\Controllers\KelolaGolfCartController;
 use App\Http\Controllers\KelolaJadwalController;
 use App\Http\Controllers\KelolaRuteController;
 use App\Http\Controllers\KelolaSopirController;
@@ -57,6 +58,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
     Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
     Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
+    Route::resource('/dashboard_admin/golf_cart', KelolaGolfCartController::class);
     Route::match(['put', 'patch'], '/dashboard_admin/rute',[KelolaRuteController::class, 'fixOrder'])->name('rute.fix');
 });
 

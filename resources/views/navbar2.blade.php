@@ -26,7 +26,7 @@
         <a href="{{ url('/dashboard_admin/rute') }}"><i class="fa fa-road"></i><p>Ubah Rute</p></a>
         <a href="{{ url('/dashboard_admin/jadwal') }}"><i class="fa fa-calendar"></i><p>Ubah Jadwal</p></a>
         <a href="{{ url('/dashboard_admin/sopir') }}"><i class="fa fa-male"></i><p>Kelola Supir</p></a>
-        <a href="{{ url('/dashboard_admin/') }}"><i class="fa fa-bus"></i><p>Kelola Golf Cart</p></a>
+        <a href="{{ url('/dashboard_admin/golf_cart') }}"><i class="fa fa-bus"></i><p>Kelola Golf Cart</p></a>
     </div>
     <!-- end navbar -->
 

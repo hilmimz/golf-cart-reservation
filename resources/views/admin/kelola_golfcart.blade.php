@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Popup tambah pertanyaan -->
-<form action="" method="POST">
+<form action="{{ route('golf_cart.store') }}" method="POST">
   @method('POST')
   @csrf
   <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
@@ -19,9 +19,22 @@
                 <table class="table">
                   <tr>
                     <td>
-                      Pertanyaan
+                      Nama
                       <div class="input-group input-group-sm mx-auto my-1">
-                        <input type="text" id='pertanyaan' name='pertanyaan' class="form-control @error('pertanyaan') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input type="text" id='pertanyaan' name='name' class="form-control @error('pertanyaan') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        @error('pertanyaan')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{!! $message !!}</strong>
+                          </span>
+                        @enderror 
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Max Seat
+                      <div class="input-group input-group-sm mx-auto my-1">
+                        <input type="number" id='pertanyaan' name='max_seat' class="form-control @error('pertanyaan') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                         @error('pertanyaan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{!! $message !!}</strong>
@@ -85,9 +98,8 @@
           <thead class="shadow-sm" style="background-color:white">
             <!-- Judul Tabel -->
             <tr class="rounded-3 text-center p-3">
-              <th class="col-5 p-3 col-sm-5 div-title-admin" style="font-size:18px">Pertanyaan</th>
-              <th class="col-3 p-3 col-sm-3 div-title-admin" style="font-size:18px">Jawaban</th>
-              <th class="col-2 p-3 col-sm-2 div-title-admin" style="font-size:18px">Skor</th>
+              <th class="col-5 p-3 col-sm-5 div-title-admin" style="font-size:18px">Name</th>
+              <th class="col-3 p-3 col-sm-3 div-title-admin" style="font-size:18px">Max Seat</th>
               <th class="col-2 p-3 col-sm-2 div-title-admin" style="font-size:18px">Aksi</th>
             </tr>
           </thead>
@@ -95,47 +107,29 @@
           <tbody style="font-size:14px">
             
             {{-- @forelse($pertanyaan as $pertanyaan) --}}
+            @foreach ($carts as $cart)
               <tr class="shadow-sm" style="background-color:white">
 
-                <!-- Isi Pertanyaan -->
-                <td class="p-3">
-                  {{-- <a href="{{ url('setting-jawaban/'.$pertanyaan->id) }}" style="font-size:15px">
-                    {{ $pertanyaan->pertanyaan }}
-                  </a> --}}asu
-                </td>       
-                
-                <!-- Isi Jawaban-->
+                <!-- Isi Nama-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{-- @forelse($pertanyaan->jawaban as $jawaban) --}}
-                      <div class="col-12 text-center shadow my-2 p-2" style="background-color:white; font-size:15px; font-weight:500">
-                        {{-- {{ $jawaban->jawaban }} --}}asu
-                      </div>
-                    {{-- @empty
-                      <p>tidak ada record</p>
-                    @endforelse --}}
+                      {{ $cart->name }}
                   </div>
                 </td>
 
-                <!-- Isi Skor-->
+                <!-- Isi Max Seat-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{-- @forelse($pertanyaan->skor as $skor) --}}
-                      <div class="col-12 text-center shadow my-2 p-2" style="background-color:white; font-size:15px; font-weight:500">
-                        {{-- {{ $skor->skor }} --}}asu
-                      </div>
-                    {{-- @empty
-                      <p>tidak ada record</p>
-                    @endforelse                      --}}
+                      {{ $cart->max_seat }}
                   </div>
                 </td>
               
                 <!-- Button Edit dan Hapus pertanyaan -->
                 <td class="p-lg-3 p-sm-3 text-center">
-                  <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-primary col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3">
+                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3">
                     <i class="fa fa-pencil" style="font-size: 20px"></i>        
                   </button>
-                  <button type="button" data-toggle="modal" data-target="#HapusModal" class="btn btn-danger col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3" >
+                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3" >
                     <i class="fa fa-trash" style="font-size: 20px"></i>
                   </button>  
                 </td>
@@ -143,11 +137,12 @@
               </tr>
 
               {{-- modal konfirmasi hapus --}}
-              <div class="modal fade" id="HapusModal" tabindex="-1" aria-labelledby="HapusModalLabel" aria-hidden="true">
+              <div class="modal fade" id="HapusModal-{{ $cart->id }}" tabindex="-1" aria-labelledby="HapusModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form method="post" action="{{url('admin-setting/delete/')}}">
+                    <form method="post" action="{{ route('golf_cart.destroy', $cart->id)}}">
                       @csrf
+                      @method('DELETE')
                       <div class="modal-header">
                         <h5 class="modal-title" id="HapusModalLabel">Konfirmasi Hapus</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
@@ -155,7 +150,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        Apakah anda yakin ingin menghapus pertanyaan "asu"?
+                        Apakah anda yakin ingin menghapus golf cart {{ $cart->name }}?
                       </div>
                       <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Ya</button>
@@ -167,11 +162,12 @@
               </div>
 
               {{-- modal update --}}
-              <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+              <div class="modal fade" id="editModal-{{ $cart->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form method="post" action="{{url('admin-setting/update/')}}">
+                    <form method="post" action="{{ route('golf_cart.update', $cart->id)}}">
                       @csrf
+                      @method('PUT')
                       <div class="modal-header">
                         <h5 class="modal-title" id="editModalLabel">Update Pertanyaan</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
@@ -180,13 +176,12 @@
                       </div>
                       <div class="modal-body">
                         <div class="form-group">
-                          <label for="pertanyaan">Pertanyaan</label>
-                          <input type="text" value="" class="form-control" id="pertanyaan" name="pertanyaan" required>
-                          {{-- @if($errors->has('pertanyaan'))
-                            <div class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('pertanyaan') }}</strong>
-                            </div>
-                          @endif --}}
+                          <label for="pertanyaan">Name</label>
+                          <input type="text" class="form-control" id="pertanyaan" name="name" value="{{ $cart->name }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="pertanyaan">Max Seat</label>
+                          <input type="number" class="form-control" id="pertanyaan" name="max_seat" value="{{ $cart->max_seat }}" required>
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -197,6 +192,7 @@
                   </div>
                 </div>
               </div>
+              @endforeach
             
             {{-- @empty
               <p>tidak ada record</p>
