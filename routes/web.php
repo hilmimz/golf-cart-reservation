@@ -8,12 +8,14 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DriverDashboardController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CekRuteController;
+use App\Http\Controllers\KelolaGolfCartController;
 use App\Http\Controllers\KelolaJadwalController;
 use App\Http\Controllers\KelolaRuteController;
 use App\Http\Controllers\KelolaSopirController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\RegisterSopirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
         return view('landing-page/landing-page');
     });
+    Route::get('/register_sopir', [RegisterSopirController::class, 'index'])->name('register_sopir');
+    Route::post('/register_sopir', [RegisterSopirController::class, 'store'])->name('register_sopir.store');
 });
 
 // Route::middleware(['user'])->group(function () {
@@ -57,6 +61,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
     Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
     Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
+    Route::resource('/dashboard_admin/kelola_golfcart', KelolaGolfCartController::class);
     Route::match(['put', 'patch'], '/dashboard_admin/rute',[KelolaRuteController::class, 'fixOrder'])->name('rute.fix');
 });
 

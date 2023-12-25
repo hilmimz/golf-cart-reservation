@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->integer('type');
+            $table->boolean('status');
             $table->foreign('type')->references('id')->on('user_types')->onDelete('cascade');
         });
     }

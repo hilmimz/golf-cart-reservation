@@ -31,7 +31,7 @@
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <form id="contactForm" action="{{ route('register.store') }}" method="POST">
+                                <form id="contactForm" action="{{ route('register_sopir.store') }}" method="POST">
                                 @csrf
                                     <div class="form-group mb-3">
                                         <label for="formGroupExampleInput">Name</label>
