@@ -15,12 +15,14 @@ use Illuminate\Support\Str;
 class ReservasiController extends Controller
 {
     public function index(Request $request){
-        dd($this->seat_left(46, 50, 1));
+        // dd($this->seat_left(46, 50, 1));
         $this->validate($request, [
             'start' => 'required',
             'end' => 'required',
             'golf_cart_id' => 'required'
         ]);
+        $routes=RoutesModel::all();
+        $golf_carts=GolfCartsModel::all();
         $start = $request->input('start');
         $end = $request->input('end');
         $golf_cart_id = $request->input('golf_cart_id');
@@ -43,7 +45,7 @@ class ReservasiController extends Controller
         $route_start = RoutesModel::find($start);
         $route_end = RoutesModel::find($end);
         $golf_cart = GolfCartsModel::find($golf_cart_id);
-        return view('user.reservasi', compact(['results','route_start','route_end','golf_cart','now']));
+        return view('user.reservasi', compact(['results','route_start','route_end','golf_cart','now', 'routes', 'golf_carts']));
     }
 
     public function findSchedule($start, $end, $schedules, $golf_cart_id){

@@ -99,14 +99,15 @@
 
                                 <div class="row">
                                 <!-- Dari -->
+                                <form action="{{ route('reservasi') }}">
                                 <div class="col-6 col-md-6 mb-4">
                                     <label class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dari</label>
                                     <div class="d-flex">
-                                        <select class="form-control" id="dari">
-                                            <option selected>Pilih Halte</option>
-                                            <option value="1">Halte A</option>
-                                            <option value="2">Halte B</option>
-                                            <option value="3">Halte C</option>
+                                        <select class="form-control" id="dari" name="start">
+                                            <option value="" selected>Pilih Halte</option>
+                                            @foreach ($routes as $route)
+                                            <option value="{{ $route->id }}">{{ $route->name }}</option>
+                                            @endforeach
                                         </select>
 
                                         <button onclick="switchHalte()" type="submit" class="btn btn-primary ml-4">
@@ -127,16 +128,25 @@
                                 <div class="col-6 col-md-6 mb-4">
                                     <label class="text-xs font-weight-bold text-success text-uppercase mb-1">Tujuan</label>
                                     <div class="d-flex">
-                                        <select class="form-control" id="tujuan">
-                                            <option selected>Pilih halte</option>
-                                            <option value="1">Halte A</option>
-                                            <option value="2">Halte B</option>
-                                            <option value="3">Halte C</option>
-                                        </select>
+                                    <select class="form-control" id="tujuan" name="end">
+                                                <option value="" selected>Pilih halte</option>
+                                                @foreach ($routes as $route)
+                                                    <option value="{{ $route->id }}">{{ $route->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="d-flex">
+                                                <select class="form-control" id="tujuan" name="golf_cart_id">
+                                                    <option value="" selected>Pilih Golf Cart</option>
+                                                    @foreach ($golf_carts as $golf_cart)
+                                                        <option value="{{ $golf_cart->id }}">{{ $golf_cart->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
 
                                         <button type="submit" class="btn btn-primary ml-4 mr-2">
                                             <i class="fas fa-search"></i> 
                                         </button>
+                                    </form>
                                     </div>
                                 </div>
                                 </div>
