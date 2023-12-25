@@ -20,6 +20,7 @@ class UsersModel extends Model
         'email',
         'phone',
         'type',
+        'status'
     ];
 
     protected $hidden = [

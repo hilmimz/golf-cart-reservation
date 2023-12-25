@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class RegisterController extends Controller
+class RegisterSopirController extends Controller
 {
     public function index()
     {
-        return view('register.register', [
+        return view('register.register_sopir', [
             'title' => 'Register'
         ]);
     }
@@ -25,8 +25,8 @@ class RegisterController extends Controller
             'phone' => 'required|min:5|max:255'
         ]);
 
-        $validatedData['type'] = 1;
-        $validatedData['status'] = true;
+        $validatedData['type'] = 2;
+        $validatedData['status'] = false;
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         DB::table('USERS')->insert([
@@ -37,8 +37,9 @@ class RegisterController extends Controller
             'TYPE'=>$validatedData['type'],
             'STATUS'=>$validatedData['status']
         ]);
+
         //User::create($validatedData);
 
-        return redirect('/login')->with('success', 'Register successfull! Please Login');
+        return redirect('/login')->with('success', 'Register successfull! Please contact Administrator to validate');
     }
 }

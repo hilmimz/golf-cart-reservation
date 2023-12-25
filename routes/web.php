@@ -15,6 +15,7 @@ use App\Http\Controllers\KelolaSopirController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\RegisterSopirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
         return view('landing-page/landing-page');
     });
+    Route::get('/register_sopir', [RegisterSopirController::class, 'index'])->name('register_sopir');
+    Route::post('/register_sopir', [RegisterSopirController::class, 'store'])->name('register_sopir.store');
 });
 
 // Route::middleware(['user'])->group(function () {

@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         ];
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['email'=>$credentials['email'],'password'=>$credentials['password'], 'status'=>true])) {
             $request->session()->regenerate();
 
             if (Auth::user()->type == 1){
