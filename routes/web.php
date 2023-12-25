@@ -61,6 +61,8 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
     Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
     Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
+    Route::match(['put', 'patch'], '/dashboard_admin/sopir/validasi/{id}',[KelolaSopirController::class, 'validasi'])->name('sopir.validasi');
+    Route::match(['put', 'patch'], '/dashboard_admin/sopir/nonaktif/{id}',[KelolaSopirController::class, 'nonaktif'])->name('sopir.nonaktif');
     Route::resource('/dashboard_admin/golf_cart', KelolaGolfCartController::class);
     Route::match(['put', 'patch'], '/dashboard_admin/rute',[KelolaRuteController::class, 'fixOrder'])->name('rute.fix');
 });
