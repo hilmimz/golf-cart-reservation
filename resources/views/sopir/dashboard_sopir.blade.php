@@ -60,6 +60,19 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- Displaying Errors -->
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
+
+<!-- Displaying Success Message -->
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
 
                     <!-- Content Row -->
                     <!-- <div class="row"> -->
@@ -114,29 +127,32 @@
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <h4 class="mb-4 text-primary">Validasi Reservasi</h4>
                                                                 </div>
+                                                                <form action="{{route('dashboard_driver.validasi')}}" method="post">
+                                                                @csrf
                                                                 <div class="col-12 mb-4">
                                                                     <label class="">Halte</label>
                                                                     <div class="d-flex">
-                                                                        <select class="form-control" id="tujuan" name="end">
+                                                                        <select class="form-control" id="tujuan" name="halte">
                                                                             <option value="" selected>Pilih halte</option>
-                                                                                <option>1</option>
-                                                                                <option>1</option>
-                                                                                <option>1</option>
+                                                                            @foreach ($routes as $route)
+                                                                            <option value="{{$route->id}}">{{$route->name}}</option>
+                                                                            @endforeach
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label for="fullName">Kode Reservasi</label>
-                                                                        <input type="text" class="form-control" id="bookCode" placeholder="Masukan kode reservasi">
+                                                                        <input name="token" type="text" class="form-control" id="bookCode" placeholder="Masukan kode reservasi">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <div class="text-right mt-3">
                                                                         <button type="button" id="cancel" name="cancel" class="btn btn-secondary mr-2">Cancel</button>
-                                                                        <button type="button" id="update" name="update" class="btn btn-primary">Accept</button>
+                                                                        <button type="submit" id="update" name="update" class="btn btn-primary">Accept</button>
                                                                     </div>
                                                                 </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                 </div>

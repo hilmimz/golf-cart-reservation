@@ -83,6 +83,7 @@ Route::middleware(['user'])->group(function () {
 // SOPIR
 Route::middleware(['driver'])->group(function () {
     Route::get('/dashboard_driver', [DriverDashboardController::class, 'index'])->name('dashboard_driver');
+    Route::post('/dashboard_driver/validasi', [DriverDashboardController::class, 'validasi'])->name('dashboard_driver.validasi');
 });
 
 // OTHERS
