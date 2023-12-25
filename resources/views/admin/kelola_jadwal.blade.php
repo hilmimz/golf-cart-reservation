@@ -2,6 +2,16 @@
 @section('content')
 
 <!-- Popup tambah pertanyaan -->
+{{-- @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> Ada beberapa masalah dengan input Anda.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif --}}
 <form action="{{ route('jadwal.store') }}" method="POST">
   @method('POST')
   @csrf
@@ -36,7 +46,7 @@
                     <td>
                       Route Start
                           <div class="form-group">
-                            <select class="form-control" name="golf_cart_id"name="route_start" id="exampleFormControlSelect1">
+                            <select class="form-control" name="route_start" id="exampleFormControlSelect1">
                               @foreach ($routes as $route)
                               <option value="{{ $route->id }}">{{ $route->name }}</option>
                               @endforeach

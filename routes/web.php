@@ -61,7 +61,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/dashboard_admin/rute', KelolaRuteController::class);
     Route::resource('/dashboard_admin/jadwal', KelolaJadwalController::class);
     Route::resource('/dashboard_admin/sopir', KelolaSopirController::class);
-    Route::resource('/dashboard_admin/kelola_golfcart', KelolaGolfCartController::class);
+    Route::resource('/dashboard_admin/golf_cart', KelolaGolfCartController::class);
     Route::match(['put', 'patch'], '/dashboard_admin/rute',[KelolaRuteController::class, 'fixOrder'])->name('rute.fix');
 });
 
@@ -72,6 +72,7 @@ Route::middleware(['user'])->group(function () {
     Route::resource('/dashboard_user/profile', UserProfileController::class);
     Route::get('/cek_rute', [CekRuteController::class, 'index'])->name('cek_rute');
     Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
+    Route::post('/reservasi/pesan', [ReservasiController::class, 'reservation'])->name('reservasi.pesan');
     Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
 });
 

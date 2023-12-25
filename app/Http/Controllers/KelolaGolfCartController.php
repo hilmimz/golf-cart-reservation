@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\GolfCartsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KelolaGolfCartController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(){
-            return view('admin.kelola_golfcart');
+    public function index()
+    {
+        $carts = GolfCartsModel::all();
+        return view('admin/kelola_golfcart', compact('carts'));
     }
 
     /**
@@ -27,7 +30,17 @@ class KelolaGolfCartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'max_seat' => 'required | integer',
+        ]);
+
+        DB::table('GOLF_CARTS')->insert([
+            'NAME' =>$request->name,
+            'MAX_SEAT' => $request->max_seat
+        ]);
+
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil ditambah!']);
     }
 
     /**
@@ -49,16 +62,27 @@ class KelolaGolfCartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GolfCartsModel $golfCartsModel)
+    public function update(Request $request, GolfCartsModel $golfCartsModel, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'max_seat' => 'required | integer',
+        ]);
+
+        DB::table('GOLF_CARTS')->where('id',$id)->update([
+            'NAME' =>$request->name,
+            'MAX_SEAT' => $request->max_seat
+        ]);
+
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil diperbarui!']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GolfCartsModel $golfCartsModel)
+    public function destroy(GolfCartsModel $golfCartsModel, $id)
     {
-        //
+        $golfCartsModel::find($id)->delete();
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil dihapus!']);
     }
 }

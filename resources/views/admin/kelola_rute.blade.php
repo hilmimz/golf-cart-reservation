@@ -103,12 +103,15 @@
           </button>
       </div> 
     </div>
-    <form action="{{ route('rute.fix') }}" method="POST">
-      @method('PUT')
-      @csrf
-      <button type="submit" class="btn btn-light">fixx</button>
-    </form>
-
+    <div class="row">
+      <div class="d-flex mt-2 justify-content-end" > 
+        <form action="{{ route('rute.fix') }}" method="POST">
+          @method('PUT')
+          @csrf
+          <button type="submit" class="btn btn-light">fixx</button>
+        </form>
+      </div> 
+    </div>
     <!-- Tabel -->
     <div class="row">
       <div class="col-12 col-sm-12">

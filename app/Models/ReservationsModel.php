@@ -11,7 +11,7 @@ class ReservationsModel extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'orders';
+    protected $table = 'reservations';
     protected $primaryKey = 'id';
 
     protected $fillable =[
@@ -35,12 +35,12 @@ class ReservationsModel extends Model
         return $this->belongsTo(UsersModel::class,'driver_id','id');
     }
 
-    public function route_start(): BelongsTo
+    public function start(): BelongsTo
     {
         return $this->belongsTo(SchedulesModel::class,'route_start','id');
     }
 
-    public function route_end(): BelongsTo
+    public function end(): BelongsTo
     {
         return $this->belongsTo(SchedulesModel::class,'route_end','id');
     }
