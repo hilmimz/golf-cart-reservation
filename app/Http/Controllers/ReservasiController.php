@@ -15,6 +15,7 @@ use Illuminate\Support\Str;
 class ReservasiController extends Controller
 {
     public function index(Request $request){
+        dd($this->seat_left(46, 50, 1));
         $this->validate($request, [
             'start' => 'required',
             'end' => 'required',
@@ -104,5 +105,17 @@ class ReservasiController extends Controller
         ]);
 
         return redirect()->route('dashboard_user')->with(['success' => 'Reservasi berhasil dengan kode '.$token.'. Cek riwayat untuk melihat reservasi yang aktif']);;
+    }
+
+    public function seat_left($route_start, $route_end, $golf_cart_id){
+        $result = DB::connection('oracle')
+            ->select("BEGIN :result := seat_left(:routeStart, :routeEnd, :golfCartId); END;", [
+                ':routeStart' => $route_start,
+                ':routeEnd' => $route_end,
+                ':golfCartId' => $golf_cart_id,
+                ':result' => null, // Output parameter
+            ]);
+
+        return $result[0]->result;
     }
 }
