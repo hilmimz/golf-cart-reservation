@@ -9,7 +9,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">TAMBAH PERTANYAAN</h5>
+                <h5 class="modal-title" id="detailModalLabel">TAMBAH Golf Cart</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -86,7 +86,7 @@
     <div class="row">
       <div class="d-flex mt-4 justify-content-end" > 
           <button type="button" class="btn btn-success justify-content-center py-2 rounded-3 btn-font" style="color:white" data-toggle="modal" data-target="#detailModal">
-            <span class="rounded-3" style="color:white"><i class="fa fa-plus mx-2"></i></span>Tambah Pertanyaan
+            <span class="rounded-3" style="color:white"><i class="fa fa-plus mx-2"></i></span>Tambah Golf Cart
           </button>
       </div> 
     </div>
@@ -169,7 +169,7 @@
                       @csrf
                       @method('PUT')
                       <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Update Pertanyaan</h5>
+                        <h5 class="modal-title" id="editModalLabel">Update Golf Cart</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                           {{-- <span aria-hidden="true">&times;</span> --}}
                         </button>
