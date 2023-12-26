@@ -174,7 +174,7 @@
 
                     <!-- Content Row -->
 
-                    <div class="row col-10">
+                    <div class="row col-12">
                         <!-- Area Chart -->
                         <div class="col-xl col-lg-7">
                             <div class="card shadow mb-4">
