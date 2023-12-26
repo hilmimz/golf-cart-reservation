@@ -9,9 +9,10 @@ class RiwayatController extends Controller
 {
     public function index()
     {
-        $reservations = ReservationsModel::where('passenger_id', 1)->get();
+        $reservations_selesai = ReservationsModel::where('passenger_id', auth()->user()->id)->where('status', false)->get();
+        $reservations_aktif = ReservationsModel::where('passenger_id', auth()->user()->id)->where('status', true)->get();
         // dd($reservations);
-        return view('user.riwayat', compact('reservations'));
+        return view('user.riwayat', compact('reservations_selesai','reservations_aktif'));
     }
 
     public function batal ($id)

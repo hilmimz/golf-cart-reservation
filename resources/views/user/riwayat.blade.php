@@ -68,9 +68,107 @@
                 </nav>
                 <!-- End of Topbar -->
 
+                <h4>Reservasi Aktif</h4>
+                @if ($reservations_aktif->count() <= 0)
+                    Tidak ada reservasi yang aktif
+                @else
+                @foreach ($reservations_aktif as $reservation)
+                <div class="container-fluid d-flex justify-content-center">
+    
+                        <!-- Content Row -->
+    
+                        <div class="row col-10">
+    
+                            <!-- Area Chart -->
+                            <div class="col-xl col-lg-7">
+                                <div class="card shadow mb-4">
+                                    <div class="card-body">
+    
+                                    <div class="container-fluid custom-container ml-2">
+                                        
+                                    <div class="row">
+                                        <div class="col-6 d-flex justify-content-start">
+                                            <h5 class="card-title">Kode Pemesanan: {{ $reservation->token }}</h5> <!-- Replace with your actual reservation code --></h5>
+                                        </div>
+    
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <div>
+                                            <span class="badge badge-pill {{ ($reservation->status == 1) ? "badge-primary" : "badge-secondary" }}">{{ ($reservation->status == 1) ? "Aktif" : "Selesai" }}</span>         
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <hr class="my-2 mb-4">
+    
+                                    
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 custom-content">
+                                        <h5>{{ $reservation->golf_cart->name }}</h5>
+                                    </div>
+                                    <div class="col-md-3 custom-content">
+                                        <h6>{{ \Carbon\Carbon::parse($reservation->start->time)->format('H:i') }}</h6>
+                                        <p>{{ $reservation->start->route->name }}</p>
+                                    </div>
+                                    <div class="col-md-2 custom-content">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                    </svg>
+                                    </div>
+                                    <div class="col-md-2 custom-content">
+                                        <h6>{{ \Carbon\Carbon::parse($reservation->end->time)->format('H:i') }}</h6>
+                                        <p>{{ $reservation->end->route->name }}</p>
+                                    </div>
+    
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-danger text-right" data-toggle="modal" data-target="#batalkanModalCenter-{{$reservation->id}}">Batalkan</button>  
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="batalkanModalCenter-{{$reservation->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Reservasi Glof Cart</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Apakah anda yakin membatalkan reservasi golf cart dari {{ $reservation->start->name }} dengan tujuan {{ $reservation->end->name }}?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{ route('riwayat.batal', $reservation->id) }}"method="post">
+                                                        @csrf
+                                                        @method('put')
+                                                        <input type="hidden" name="golf_cart_id" value="{{ $reservation->id }}">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                                        <button type="submit" class="btn btn-primary">Iya</button>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                    </div>
+                                        
+                                    </div>
             
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+             </div> 
+             @endforeach
+             @endif
+
+             <hr>
+
             <!-- Pesan -->
-            @foreach ($reservations as $reservation)
+            <h4>Riwayat Reservasi</h4>
+            @if ($reservations_selesai->count() <= 0)
+                    Tidak ada riwayat reservasi
+            @else
+            @foreach ($reservations_selesai as $reservation)
             <div class="container-fluid d-flex justify-content-center">
 
                     <!-- Content Row -->
@@ -102,6 +200,8 @@
                             <div class="row align-items-center">
                                 <div class="col-md-5 custom-content">
                                     <h5>{{ $reservation->golf_cart->name }}</h5>
+                                    <h6>{{ $reservation->driver->name }}</h6>
+                                    <h6>{{ $reservation->date }}</h6>
                                 </div>
                                 <div class="col-md-3 custom-content">
                                     <h6>{{ \Carbon\Carbon::parse($reservation->start->time)->format('H:i') }}</h6>
@@ -116,36 +216,6 @@
                                     <h6>{{ \Carbon\Carbon::parse($reservation->end->time)->format('H:i') }}</h6>
                                     <p>{{ $reservation->end->route->name }}</p>
                                 </div>
-
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-danger text-right" data-toggle="modal" data-target="#batalkanModalCenter-{{$reservation->id}}">Batalkan</button>  
-                                    
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="batalkanModalCenter-{{$reservation->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Reservasi Glof Cart</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Apakah anda yakin membatalkan reservasi golf cart dari {{ $reservation->start->name }} dengan tujuan {{ $reservation->end->name }}?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <form action="{{ route('riwayat.batal', $reservation->id) }}"method="post">
-                                                    @csrf
-                                                    @method('put')
-                                                    <input type="hidden" name="golf_cart_id" value="{{ $reservation->id }}">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                                                    <button type="submit" class="btn btn-primary">Iya</button>
-                                                </form>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                </div>
                                     
                                 </div>
         
@@ -157,6 +227,7 @@
             </div>
          </div> 
          @endforeach
+         @endif
             
 
             <!-- Footer -->
