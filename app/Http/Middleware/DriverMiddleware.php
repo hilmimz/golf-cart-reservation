@@ -16,7 +16,7 @@ class DriverMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(auth()->guest()) {
-            abort(403);
+            return redirect('/login');
         }
         elseif (auth()->user()->type == 1) {
             return redirect('/dashboard_user');

@@ -16,7 +16,7 @@ class UserMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(auth()->guest()) {
-            abort(403);
+            return redirect('/login');
         }
         elseif (auth()->user()->type == 2) {
             return redirect('/dashboard_driver');
