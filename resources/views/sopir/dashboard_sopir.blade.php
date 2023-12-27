@@ -123,12 +123,12 @@
                                             <div class="row">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                                    <h4 class="mb-4 text-primary">Validasi Reservasi</h4>
-                                                                </div>
-                                                                <form action="{{route('dashboard_driver.validasi')}}" method="post">
+                                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                <h4 class="mb-4 text-primary">Validasi Reservasi</h4>
+                                                            </div>
+                                                            <form action="{{route('dashboard_driver.validasi')}}" method="post">
                                                                 @csrf
+                                                                <div class="row">
                                                                 <div class="col-12 mb-4">
                                                                     <label class="">Halte</label>
                                                                     <div class="d-flex">
