@@ -86,7 +86,7 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="HapusModalLabel">Konfirmasi Hapus</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                          {{-- <span aria-hidden="true">&times;</span> --}}
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
@@ -102,7 +102,7 @@
               </div>
 
               {{-- modal update --}}
-              <div class="modal fade" id="AktifModal-{{$sopirinaktif->id}}"" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+              <div class="modal fade" id="AktifModal-{{$sopirinaktif->id}}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <form method="post" action="{{route('sopir.validasi', $sopirinaktif->id)}}">
@@ -111,7 +111,7 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="editModalLabel">Update Sopir</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                          {{-- <span aria-hidden="true">&times;</span> --}}
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
@@ -194,7 +194,7 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="HapusModalLabel">Konfirmasi Hapus</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                          {{-- <span aria-hidden="true">&times;</span> --}}
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
