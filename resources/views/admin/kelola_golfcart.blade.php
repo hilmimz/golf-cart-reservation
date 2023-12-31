@@ -113,14 +113,18 @@
                 <!-- Isi Nama-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
                       {{ $cart->name }}
+                    </div>
                   </div>
                 </td>
 
                 <!-- Isi Max Seat-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
                       {{ $cart->max_seat }}
+                    </div>
                   </div>
                 </td>
               

@@ -48,19 +48,25 @@
                 <!-- Isi Pertanyaan -->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopirinaktif->name}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopirinaktif->name}}
+                    </div>
                   </div>
                 </td>      
                 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopirinaktif->email}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopirinaktif->email}}
+                    </div>
                   </div>
                 </td>  
 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopirinaktif->phone}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopirinaktif->phone}}
+                    </div>
                   </div>
                 </td> 
               
@@ -154,24 +160,31 @@
           <tbody style="font-size:14px">
             @foreach ($sopiraktifs as $sopiraktif)
             {{-- @forelse($pertanyaan as $pertanyaan) --}}
+
               <tr class="shadow-sm" style="background-color:white">
 
                 <!-- Isi Pertanyaan -->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->name}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopiraktif->name}}
+                    </div>
                   </div>
                 </td>       
                 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->email}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopiraktif->email}}
+                    </div>
                   </div>
                 </td>   
 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->phone}}
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
+                      {{$sopiraktif->phone}}
+                    </div>
                   </div>
                 </td> 
               
