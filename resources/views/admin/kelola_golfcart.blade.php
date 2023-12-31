@@ -126,10 +126,10 @@
               
                 <!-- Button Edit dan Hapus pertanyaan -->
                 <td class="p-lg-3 p-sm-3 text-center">
-                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary mx-lg-2 my-2 rounded-3">
+                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary col-lg-8 mx-lg-2 my-2 rounded-3">
                     <i class="fa fa-pencil" style="font-size: 20px"></i>        
                   </button>
-                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger mx-lg-2 my-2 rounded-3" >
+                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger col-lg-8 mx-lg-2 my-2 rounded-3" >
                     <i class="fa fa-trash" style="font-size: 20px"></i>
                   </button>  
                 </td>
