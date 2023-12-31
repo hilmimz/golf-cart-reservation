@@ -98,9 +98,9 @@
           <thead class="shadow-sm" style="background-color:white">
             <!-- Judul Tabel -->
             <tr class="rounded-3 text-center p-3">
-              <th class="col-5 p-3 col-sm-5 div-title-admin" style="font-size:18px">Name</th>
-              <th class="col-3 p-3 col-sm-3 div-title-admin" style="font-size:18px">Max Seat</th>
-              <th class="col-2 p-3 col-sm-2 div-title-admin" style="font-size:18px">Aksi</th>
+              <th class="col-5 p-3 col-sm-1 div-title-admin" style="font-size:18px">Name</th>
+              <th class="col-4 p-3 col-sm-1 div-title-admin" style="font-size:18px">Max Seat</th>
+              <th class="col-3 p-3 col-sm-1 div-title-admin" style="font-size:18px">Aksi</th>
             </tr>
           </thead>
 
@@ -126,10 +126,10 @@
               
                 <!-- Button Edit dan Hapus pertanyaan -->
                 <td class="p-lg-3 p-sm-3 text-center">
-                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3">
+                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary mx-lg-2 my-2 rounded-3">
                     <i class="fa fa-pencil" style="font-size: 20px"></i>        
                   </button>
-                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3" >
+                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger mx-lg-2 my-2 rounded-3" >
                     <i class="fa fa-trash" style="font-size: 20px"></i>
                   </button>  
                 </td>
