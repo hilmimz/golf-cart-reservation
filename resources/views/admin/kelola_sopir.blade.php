@@ -48,19 +48,19 @@
                 <!-- Isi Pertanyaan -->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->name}}
+                    {{$sopirinaktif->name}}
                   </div>
                 </td>      
                 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->email}}
+                    {{$sopirinaktif->email}}
                   </div>
                 </td>  
 
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
-                    {{$sopiraktif->phone}}
+                    {{$sopirinaktif->phone}}
                   </div>
                 </td> 
               
