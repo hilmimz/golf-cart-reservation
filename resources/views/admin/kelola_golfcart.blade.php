@@ -78,7 +78,7 @@
     <!-- Judul Halaman --> 
     <div class="row mt-3">
       <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 text-center div-title-admin" style="font-weight: 900">
-        <h2 class="p-2">PENGATURAN KUESIONER</h2>
+        <h2 class="p-2">KELOLA GOLF CART</h2>
       </div>
     </div>
 
