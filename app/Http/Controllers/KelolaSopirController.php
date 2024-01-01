@@ -64,7 +64,7 @@ class KelolaSopirController extends Controller
     public function destroy(UsersModel $usersModel, $id)
     {
         $usersModel::find($id)->delete();
-        return redirect()->route('sopir.index')->with(['success' => 'Sopir berhasil dihapus!']);
+        return redirect()->route('sopir.index')->with(['success' => 'Sopir Berhasil Dihapus!']);
     }
     public function validasi(Request $request, $id)
     {
@@ -73,7 +73,7 @@ class KelolaSopirController extends Controller
         $sopir->update([
             'status'=>true
         ]);
-        return redirect()->route('sopir.index')->with(['success', 'Sopir Berhasil divalidasi !']);
+        return redirect()->route('sopir.index')->with(['success' => 'Sopir Berhasil Divalidasi!']);
     }
     public function nonaktif($id)
     {
@@ -82,6 +82,6 @@ class KelolaSopirController extends Controller
         $sopir->update([
             'status'=>false
         ]);
-        return redirect()->route('sopir.index')->with(['success', 'Sopir Berhasil dinonaktifkan !']);
+        return redirect()->route('sopir.index')->with(['success' => 'Sopir Berhasil Dinonaktifkan!']);
     }
 }
