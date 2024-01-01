@@ -17,7 +17,8 @@ class RoutesModel extends Model
     protected $fillable =[
         'name',
         'order',
-        'time_to_next_stop'
+        'time_to_next_stop',
+        'last_updated'
     ];
 
     public function route_start_schedules(): HasMany

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamp('time');
             $table->integer('route_start');
             $table->integer('schedule_time_id');
+            $table->timestamp('last_updated');
             $table->foreign('route_start')->references('id')->on('routes')->onDelete('cascade');
             $table->foreign('schedule_time_id')->references('id')->on('schedule_time')->onDelete('cascade');
         });

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamp('start');
             $table->timestamp('end');
             $table->integer('golf_cart_id');
+            $table->timestamp('last_updated');
             $table->foreign('golf_cart_id')->references('id')->on('golf_carts')->onDelete('cascade');
         });
     }

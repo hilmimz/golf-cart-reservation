@@ -18,7 +18,8 @@ class SchedulesModel extends Model
     protected $fillable =[
         'time',
         'route_start',
-        'schedule_time_id'
+        'schedule_time_id',
+        'last_updated'
     ];
 
     public function route(): BelongsTo

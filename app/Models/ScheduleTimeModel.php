@@ -18,7 +18,8 @@ class ScheduleTimeModel extends Model
     protected $fillable =[
         'start',
         'end',
-        'golf_cart_id'
+        'golf_cart_id',
+        'last_updated'
     ];
 
     public function schedule(): HasMany

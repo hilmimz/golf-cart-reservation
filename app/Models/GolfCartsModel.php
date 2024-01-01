@@ -16,7 +16,8 @@ class GolfCartsModel extends Model
 
     protected $fillable = [
         'name',
-        'max_seat'
+        'max_seat',
+        'last_updated'
     ];
 
     public function schedules(): HasMany

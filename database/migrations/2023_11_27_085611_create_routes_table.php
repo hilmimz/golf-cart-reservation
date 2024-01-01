@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('order')->unique();
             $table->integer('time_to_next_stop');
+            $table->timestamp('last_updated');
         });
     }
 

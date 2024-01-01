@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -55,14 +57,16 @@ class DatabaseSeeder extends Seeder
 
         DB::table('golf_carts')->insert(
             [
-                'name' => 'Burok',
-                'max_seat' => 5
+                'name' => 'Bukan Golf Cart',
+                'max_seat' => 5,
+                'last_updated' => Carbon::now()
             ]
         );
         DB::table('golf_carts')->insert(
             [
                 'name' => 'Golf Cart Siapa',
-                'max_seat' => 4
+                'max_seat' => 4,
+                'last_updated' => Carbon::now()
             ]
         );
 
@@ -70,35 +74,40 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Halte Gerbang Depan',
                 'order' => 1,
-                'time_to_next_stop' => 5
+                'time_to_next_stop' => 5,
+                'last_updated' => Carbon::now()
             ]
         );
         DB::table('routes')->insert(
             [
                 'name' => 'Halte FT',
                 'order' => 2,
-                'time_to_next_stop' => 10
+                'time_to_next_stop' => 10,
+                'last_updated' => Carbon::now()
             ]
         );
         DB::table('routes')->insert(
             [
                 'name' => 'Halte FEB',
                 'order' => 3,
-                'time_to_next_stop' => 15
+                'time_to_next_stop' => 15,
+                'last_updated' => Carbon::now()
             ]
         );
         DB::table('routes')->insert(
             [
                 'name' => 'Halte Gerbang Belakang',
                 'order' => 4,
-                'time_to_next_stop' => 5
+                'time_to_next_stop' => 5,
+                'last_updated' => Carbon::now()
             ]
         );
         DB::table('routes')->insert(
             [
                 'name' => 'Halte FMIPA',
                 'order' => 5,
-                'time_to_next_stop' => 10
+                'time_to_next_stop' => 10,
+                'last_updated' => Carbon::now()
             ]
         );
     }
