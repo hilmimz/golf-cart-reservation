@@ -108,7 +108,9 @@
         <form action="{{ route('rute.fix') }}" method="POST">
           @method('PUT')
           @csrf
-          <button type="submit" class="btn btn-light">fixx</button>
+          <button type="submit" class="btn btn-info">
+            <span class="rounded-3" style="color:white"><i class="fa fa-check mx-2"></i></span>Fix Rute
+          </button>
         </form>
       </div> 
     </div>
