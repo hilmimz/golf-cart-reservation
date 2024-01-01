@@ -10,7 +10,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="detailModalLabel">Tambah Rute</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -108,7 +108,9 @@
         <form action="{{ route('rute.fix') }}" method="POST">
           @method('PUT')
           @csrf
-          <button type="submit" class="btn btn-light">fixx</button>
+          <button type="submit" class="btn btn-info">
+            <span class="rounded-3" style="color:white"><i class="fa fa-check mx-2"></i></span>Fix Rute
+          </button>
         </form>
       </div> 
     </div>

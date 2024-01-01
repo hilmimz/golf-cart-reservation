@@ -40,7 +40,7 @@ class KelolaGolfCartController extends Controller
             'MAX_SEAT' => $request->max_seat
         ]);
 
-        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil ditambah!']);
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf Cart Berhasil Ditambahkan!']);
     }
 
     /**
@@ -74,7 +74,7 @@ class KelolaGolfCartController extends Controller
             'MAX_SEAT' => $request->max_seat
         ]);
 
-        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil diperbarui!']);
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf Cart Berhasil Diperbarui!']);
     }
 
     /**
@@ -83,6 +83,6 @@ class KelolaGolfCartController extends Controller
     public function destroy(GolfCartsModel $golfCartsModel, $id)
     {
         $golfCartsModel::find($id)->delete();
-        return redirect()->route('golf_cart.index')->with(['success' => 'Golf cart berhasil dihapus!']);
+        return redirect()->route('golf_cart.index')->with(['success' => 'Golf Cart Berhasil Dihapus!']);
     }
 }

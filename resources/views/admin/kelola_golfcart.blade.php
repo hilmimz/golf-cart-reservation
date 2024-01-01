@@ -9,8 +9,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">TAMBAH Golf Cart</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="detailModalLabel">Tambah Golf Cart</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -19,7 +19,7 @@
                 <table class="table">
                   <tr>
                     <td>
-                      Nama
+                      Name
                       <div class="input-group input-group-sm mx-auto my-1">
                         <input type="text" id='pertanyaan' name='name' class="form-control @error('pertanyaan') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                         @error('pertanyaan')
@@ -78,7 +78,7 @@
     <!-- Judul Halaman --> 
     <div class="row mt-3">
       <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 text-center div-title-admin" style="font-weight: 900">
-        <h2 class="p-2">PENGATURAN KUESIONER</h2>
+        <h2 class="p-2">KELOLA GOLF CART</h2>
       </div>
     </div>
 
@@ -98,9 +98,9 @@
           <thead class="shadow-sm" style="background-color:white">
             <!-- Judul Tabel -->
             <tr class="rounded-3 text-center p-3">
-              <th class="col-5 p-3 col-sm-5 div-title-admin" style="font-size:18px">Name</th>
-              <th class="col-3 p-3 col-sm-3 div-title-admin" style="font-size:18px">Max Seat</th>
-              <th class="col-2 p-3 col-sm-2 div-title-admin" style="font-size:18px">Aksi</th>
+              <th class="col-5 p-3 col-sm-1 div-title-admin" style="font-size:18px">Name</th>
+              <th class="col-4 p-3 col-sm-1 div-title-admin" style="font-size:18px">Max Seat</th>
+              <th class="col-3 p-3 col-sm-1 div-title-admin" style="font-size:18px">Aksi</th>
             </tr>
           </thead>
 
@@ -113,23 +113,27 @@
                 <!-- Isi Nama-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
                       {{ $cart->name }}
+                    </div>
                   </div>
                 </td>
 
                 <!-- Isi Max Seat-->
                 <td class="p-3 fw-bold">
                   <div class="input-group input-group-sm my-lg-1 col-sm-12 justify-content-center">
+                    <div class="col-12 text-center" style="background-color:white; font-size:15px; font-weight:500">
                       {{ $cart->max_seat }}
+                    </div>
                   </div>
                 </td>
               
                 <!-- Button Edit dan Hapus pertanyaan -->
                 <td class="p-lg-3 p-sm-3 text-center">
-                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3">
+                  <button type="button" data-toggle="modal" data-target="#editModal-{{ $cart->id }}" class="btn btn-primary col-lg-8 mx-lg-2 my-2 rounded-3">
                     <i class="fa fa-pencil" style="font-size: 20px"></i>        
                   </button>
-                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger col-lg-10 col-sm-12 mx-lg-2 my-2 rounded-3" >
+                  <button type="button" data-toggle="modal" data-target="#HapusModal-{{ $cart->id }}" class="btn btn-danger col-lg-8 mx-lg-2 my-2 rounded-3" >
                     <i class="fa fa-trash" style="font-size: 20px"></i>
                   </button>  
                 </td>
@@ -146,7 +150,7 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="HapusModalLabel">Konfirmasi Hapus</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                          {{-- <span aria-hidden="true">&times;</span> --}}
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
@@ -171,7 +175,7 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="editModalLabel">Update Golf Cart</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                          {{-- <span aria-hidden="true">&times;</span> --}}
+                          <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
