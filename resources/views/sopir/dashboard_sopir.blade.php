@@ -147,7 +147,6 @@
                                                                 </div>
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                     <div class="text-right mt-3">
-                                                                        <button type="button" id="cancel" name="cancel" class="btn btn-secondary mr-2">Cancel</button>
                                                                         <button type="submit" id="update" name="update" class="btn btn-primary">Accept</button>
                                                                     </div>
                                                                 </div>
