@@ -101,7 +101,7 @@ class KelolaRuteController extends Controller
     public function destroy(RoutesModel $routesModel, $id)
     {
         $routesModel::find($id)->delete();
-        return redirect()->route('rute.index')->with(['success' => 'Rute Berhasil dihapus!']);
+        return redirect()->route('rute.index')->with(['success' => 'Rute Berhasil Dihapus!']);
     }
 
     public function fixOrder(){
@@ -113,6 +113,6 @@ class KelolaRuteController extends Controller
         foreach ($routes as $index => $route) {
             $route->update(['order' => $index + 1]);
         }
-        return redirect()->route('rute.index')->with(['success' => 'Order diperbaiki!']);
+        return redirect()->route('rute.index')->with(['success' => 'Order DSiperbaiki!']);
     }
 }
