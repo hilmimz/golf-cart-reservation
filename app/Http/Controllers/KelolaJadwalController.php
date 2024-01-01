@@ -74,7 +74,7 @@ class KelolaJadwalController extends Controller
                 break;
             }
         }
-        return redirect()->route('jadwal.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('jadwal.index')->with(['success' => 'Jadwal Berhasil Disimpan!']);
     }
 
     /**
@@ -213,7 +213,7 @@ class KelolaJadwalController extends Controller
         //     })->delete();
         // }
 
-        return redirect()->route('jadwal.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('jadwal.index')->with(['success' => 'Jadwal Berhasil Diubah!']);
     }
 
     /**
