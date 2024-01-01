@@ -47,7 +47,7 @@ class KelolaRuteController extends Controller
             'TIME_TO_NEXT_STOP' => $request->time_to_next_stop
         ]);
 
-        return redirect()->route('rute.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('rute.index')->with(['success' => 'Rute Berhasil Disimpan!']);
     }
 
     /**
@@ -92,7 +92,7 @@ class KelolaRuteController extends Controller
             'TIME_TO_NEXT_STOP' => $request->time_to_next_stop
         ]);
 
-        return redirect()->route('rute.index')->with(['success' => 'Data Berhasil Diperbarui!']);
+        return redirect()->route('rute.index')->with(['success' => 'Rute Berhasil Diperbarui!']);
     }
 
     /**
@@ -101,7 +101,7 @@ class KelolaRuteController extends Controller
     public function destroy(RoutesModel $routesModel, $id)
     {
         $routesModel::find($id)->delete();
-        return redirect()->route('rute.index')->with(['success' => 'Rute berhasil dihapus!']);
+        return redirect()->route('rute.index')->with(['success' => 'Rute Berhasil dihapus!']);
     }
 
     public function fixOrder(){
