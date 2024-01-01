@@ -19,7 +19,7 @@
                 <table class="table">
                   <tr>
                     <td>
-                      Nama
+                      Name
                       <div class="input-group input-group-sm mx-auto my-1">
                         <input type="text" id='pertanyaan' name='name' class="form-control @error('pertanyaan') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                         @error('pertanyaan')
