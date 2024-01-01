@@ -113,6 +113,6 @@ class KelolaRuteController extends Controller
         foreach ($routes as $index => $route) {
             $route->update(['order' => $index + 1]);
         }
-        return redirect()->route('rute.index')->with(['success' => 'Order DSiperbaiki!']);
+        return redirect()->route('rute.index')->with(['success' => 'Order Diperbaiki!']);
     }
 }
