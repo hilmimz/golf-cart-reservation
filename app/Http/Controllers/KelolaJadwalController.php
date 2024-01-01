@@ -222,7 +222,7 @@ class KelolaJadwalController extends Controller
     public function destroy(ScheduleTimeModel $scheduleTimeModel, $id)
     {
         $scheduleTimeModel::find($id)->delete();
-        return redirect()->route('jadwal.index')->with(['success' => 'Jadwal berhasil dihapus!']);
+        return redirect()->route('jadwal.index')->with(['success' => 'Jadwal Berhasil Dihapus!']);
     }
 
     public function route_order($route_start_id){
