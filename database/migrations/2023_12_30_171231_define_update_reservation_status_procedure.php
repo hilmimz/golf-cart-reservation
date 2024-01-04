@@ -22,7 +22,7 @@ return new class extends Migration
                 SELECT 1
                 FROM schedules s
                 WHERE s.id = r.route_start
-                AND EXTRACT(HOUR FROM (SYSTIMESTAMP - s.time)) * 60 +
+                AND (EXTRACT(HOUR FROM (SYSTIMESTAMP - s.time))+7) * 60 +
                     EXTRACT(MINUTE FROM (SYSTIMESTAMP - s.time)) > 5
             );
             END update_reservation_status;

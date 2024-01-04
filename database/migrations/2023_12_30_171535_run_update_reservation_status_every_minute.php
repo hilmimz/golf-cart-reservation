@@ -26,7 +26,7 @@ return new class extends Migration
                     DBMS_SCHEDULER.create_job (
                         job_name        => 'UPDATE_RESERVATION_STATUS_JOB',
                         job_type        => 'PLSQL_BLOCK',
-                        job_action      => 'BEGIN update_reservation_status_proc; END;',
+                        job_action      => 'BEGIN update_reservation_status; END;',
                         start_date      => SYSTIMESTAMP,
                         repeat_interval => 'FREQ=MINUTELY; INTERVAL=1',
                         enabled         => TRUE
